@@ -155,7 +155,7 @@ export function FeatureShowcase() {
             <CardContent className="p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                  {showcaseFeatures[activeFeature].icon({ className: "w-6 h-6 text-purple-600" })}
+                  <showcaseFeatures[activeFeature].icon className="w-6 h-6 text-purple-600" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">{showcaseFeatures[activeFeature].ai.title}</h3>
