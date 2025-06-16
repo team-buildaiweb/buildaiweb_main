@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, Star, Zap, Users, Building, Crown } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
 	{
@@ -34,6 +35,8 @@ const plans = [
 			"Watermark on mobile apps",
 		],
 		cta: "Start Free",
+    link:"/dashboard",
+
 		description: "Great for personal projects and testing our AI capabilities",
 	},
 	{
@@ -66,6 +69,8 @@ const plans = [
 			"No advanced business features",
 		],
 		cta: "Start Pro Trial",
+    link:"/dashboard",
+
 		description: "Perfect for freelancers, agencies, and growing businesses",
 	},
 	{
@@ -100,6 +105,7 @@ const plans = [
 			"No custom SLA",
 		],
 		cta: "Start Business Trial",
+    link:"/dashboard",
 		description:
 			"Ideal for teams, agencies, and businesses with multiple projects",
 	},
@@ -127,6 +133,7 @@ const plans = [
 		],
 		limitations: [],
 		cta: "Contact Sales",
+    link: "/contact",
 		description: "Tailored solutions for enterprise-level requirements",
 	},
 ];
@@ -249,7 +256,7 @@ export function PricingPlans() {
 								<p className='text-sm text-gray-600 mb-6 text-center'>
 									{plan.description}
 								</p>
-
+                  <Link href={plan.link} >
 								<Button
 									className={`w-full mb-6 ${
 										plan.popular
@@ -261,6 +268,7 @@ export function PricingPlans() {
 								>
 									{plan.cta}
 								</Button>
+                </Link>
 
 								<div className='space-y-3'>
 									<h4 className='font-semibold text-gray-900 text-sm'>

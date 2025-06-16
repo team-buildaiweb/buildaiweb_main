@@ -1,35 +1,43 @@
-import { notFound } from "next/navigation"
-import { BlogPost } from "@/components/blog/blog-post"
-import { RelatedPosts } from "@/components/blog/related-posts"
-import { blogPosts } from "@/lib/blog-data"
+import { notFound } from "next/navigation";
+import { BlogPostComponent } from "@/components/blog/blog-post";
+import { RelatedPosts } from "@/components/blog/related-posts";
+import { blogPosts } from "@/lib/blog-data";
 
 interface BlogPostPageProps {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((p) => p.id === params.slug)
+  const post = blogPosts.find((p) => p.id === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   const relatedPosts = blogPosts
-    .filter((p) => p.id !== post.id && (p.category === post.category || p.tags.some((tag) => post.tags.includes(tag))))
-    .slice(0, 3)
+    .filter(
+      (p) =>
+        p.id !== post.id &&
+        (p.category === post.category ||
+          p.tags.some((tag) => post.tags.includes(tag)))
+    )
+    .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-white">
-      <BlogPost post={post} />
+    <div className='min-h-screen bg-white'>
+      <BlogPostComponent post={post} />
       <RelatedPosts posts={relatedPosts} />
     </div>
-  )
+  );
 }
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.id,
-  }))
+  }));
+  return blogPosts.map((post) => ({
+    slug: post.id,
+  }));
 }

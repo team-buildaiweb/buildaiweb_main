@@ -2,14 +2,15 @@
 
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { useState } from "react";
 
 export default function StatusPage() {
   const services = [
     {
       id: "api",
       name: "API Services",
-      status: "operational",
-      uptime: "99.99%",
+      status: "down",
+      uptime: "0%",
       lastIncident: "None",
     },
     {
@@ -56,7 +57,24 @@ export default function StatusPage() {
     },
   ];
 
-  const getStatusColor = (status) => {
+  interface Service {
+    id: string;
+    name: string;
+    status: "operational" | "degraded" | "down" | string;
+    uptime: string;
+    lastIncident: string;
+  }
+
+  interface Region {
+    id: string;
+    name: string;
+    latency: string;
+    status: "optimal" | "degraded" | "down" | string;
+  }
+
+  const getStatusColor = (
+    status: "operational" | "optimal" | "degraded" | "down" | string
+  ): string => {
     switch (status) {
       case "operational":
       case "optimal":
@@ -67,6 +85,38 @@ export default function StatusPage() {
         return "bg-red-100 text-red-800";
       default:
         return "bg-gray-100 text-gray-800";
+    }
+  };
+
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMessage("");
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      const response = await fetch("/subscribe.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({ email }),
+      });
+
+      if (response.ok) {
+        setMessage("Subscription successful! Please check your email.");
+        setEmail("");
+      } else {
+        setMessage("Failed to subscribe. Please try again later.");
+      }
+    } catch (error) {
+      setMessage("An error occurred. Please try again later.");
     }
   };
 
@@ -148,12 +198,23 @@ export default function StatusPage() {
           <p className='text-gray-600 mb-4'>
             Get notified when there are changes to our system status.
           </p>
-          <a
-            href='#'
-            className='inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
-          >
-            Subscribe to Status Updates
-          </a>
+          <form onSubmit={handleSubscribe} className='space-y-4'>
+            <input
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder='Enter your email'
+              className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
+              required
+            />
+            <button
+              type='submit'
+              className='inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+            >
+              Subscribe
+            </button>
+          </form>
+          {message && <p className='mt-4 text-sm text-gray-700'>{message}</p>}
         </div>
       </main>
       <Footer />

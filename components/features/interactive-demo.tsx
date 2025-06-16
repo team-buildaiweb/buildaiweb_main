@@ -327,7 +327,7 @@ export function InteractiveDemo() {
                             <span>Selecting layout</span>
                           </div>
                           <div className='flex items-center justify-center space-x-2 text-yellow-600'>
-                            <PulseLoader size='sm' color='yellow' />
+                            <PulseLoader size='sm' color='purple' />
                             <span>Generating code</span>
                           </div>
                         </div>

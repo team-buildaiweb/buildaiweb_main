@@ -50,7 +50,7 @@ export function PricingHeader() {
           </div>
         </div>
 
-        <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+        {/* <div className='flex flex-col sm:flex-row gap-4 justify-center'>
           <Button
             size='lg'
             className='bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 text-lg'
@@ -64,7 +64,7 @@ export function PricingHeader() {
           >
             View All Features
           </Button>
-        </div>
+        </div> */}
 
         {/* Feature Highlights */}
         <div className='flex flex-wrap justify-center gap-4 mb-12'>

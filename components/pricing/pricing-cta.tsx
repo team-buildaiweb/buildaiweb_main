@@ -54,7 +54,7 @@ export function PricingCTA() {
                 <div className='inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-lg mb-3'>
                   <Users className='w-6 h-6 text-white' />
                 </div>
-                <div className='text-2xl font-bold mb-1'>10,000+</div>
+                <div className='text-2xl font-bold mb-1'>1,000+</div>
                 <div className='text-purple-200 text-sm'>Happy Customers</div>
               </div>
               <div className='text-center'>

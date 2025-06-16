@@ -32,33 +32,22 @@ const footerLinks = {
     { name: "Features", href: "/features" },
     { name: "Pricing", href: "/pricing" },
     { name: "Dashboard", href: "/dashboard" },
-    { name: "Templates", href: "/templates" },
     { name: "API", href: "/api" },
-    { name: "Integrations", href: "/integrations" },
   ],
   company: [
     { name: "About Us", href: "/about" },
     { name: "Blog", href: "/blog" },
     { name: "Careers", href: "/careers" },
-    { name: "Press Kit", href: "/press" },
-    { name: "Partners", href: "/partners" },
-    { name: "Investors", href: "/investors" },
   ],
   resources: [
-    { name: "Documentation", href: "/docs" },
-    { name: "Help Center", href: "/help" },
+    { name: "Documentation", href: "/documentation" },
     { name: "Community", href: "/community" },
-    { name: "Tutorials", href: "/tutorials" },
-    { name: "Webinars", href: "/webinars" },
     { name: "Status", href: "/status" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Service", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
     { name: "GDPR", href: "/gdpr" },
-    { name: "Security", href: "/security" },
-    { name: "Compliance", href: "/compliance" },
   ],
 };
 
@@ -101,10 +90,27 @@ const socialLinks = [
   },
 ];
 
-const awards = [
-  { name: "Best AI Tool 2024", organization: "TechCrunch" },
+interface FooterLink {
+  name: string;
+  href: string;
+}
+
+interface SocialLink {
+  name: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  href: string;
+  color: string;
+}
+
+interface Award {
+  name: string;
+  organization?: string;
+}
+
+const awards: Award[] = [
+  // { name: "Best AI Tool 2024", organization: "TechCrunch" },
   { name: "Innovation Award", organization: "WebDev Summit" },
-  { name: "Top Startup", organization: "Product Hunt" },
+  // { name: "Top Startup", organization: "Product Hunt" },
 ];
 
 export function Footer() {
@@ -351,15 +357,16 @@ export function Footer() {
                 Recognition & Awards
               </h5>
               <div className='space-y-2'>
-                {awards.map((award, index) => (
-                  <div
-                    key={index}
-                    className='flex items-center text-sm text-gray-400'
-                  >
-                    <Award className='w-3 h-3 mr-2 text-yellow-500' />
-                    <span>{award.name}</span>
-                  </div>
-                ))}
+                {awards.length > 0 &&
+                  awards.map((award, index) => (
+                    <div
+                      key={index}
+                      className='flex items-center text-sm text-gray-400'
+                    >
+                      <Award className='w-3 h-3 mr-2 text-yellow-500' />
+                      <span>{award.name}</span>
+                    </div>
+                  ))}
               </div>
             </div>
 
@@ -410,7 +417,7 @@ export function Footer() {
               <div className='inline-flex items-center px-4 py-2 bg-gray-800 rounded-lg'>
                 <Heart className='w-4 h-4 mr-2 text-red-500' />
                 <span className='text-sm text-gray-300'>
-                  Made with love in San Francisco
+                  Made with love in United States
                 </span>
               </div>
             </div>
@@ -421,11 +428,12 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className='border-t border-gray-800'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6'>
+          {" "}
           <div className='flex flex-col md:flex-row justify-between items-center'>
+            {" "}
             <div className='text-gray-400 text-sm mb-4 md:mb-0'>
-              © 2024 BuildAIWeb, Inc. All rights reserved.
+              © {new Date().getFullYear()} BuildAIWeb, Inc. All rights reserved.
             </div>
-
             <div className='flex items-center space-x-6 text-sm text-gray-400'>
               <Link
                 href='/sitemap'

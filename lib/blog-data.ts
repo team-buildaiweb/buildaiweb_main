@@ -103,7 +103,7 @@ Mobile is becoming more accessible, more creative, and more powerful than ever b
     content: `
 # 10 Mobile Layout Patterns Trained into Our AI Engine
 
-Our AI has analyzed over 50,000 successful mobile apps to identify the most effective layout patterns. Here are the top 10 patterns that consistently drive engagement and conversions.
+Our AI has analyzed over 5,000 successful mobile apps to identify the most effective layout patterns. Here are the top 10 patterns that consistently drive engagement and conversions.
 
 ## 1. The Onboarding Flow
 

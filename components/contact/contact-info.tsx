@@ -236,7 +236,7 @@ export function ContactInfo() {
                 <Users className='w-4 h-4 text-blue-600' />
               </div>
               <div>
-                <div className='font-semibold text-gray-900'>10,000+</div>
+                <div className='font-semibold text-gray-900'>1,000+</div>
                 <div className='text-sm text-gray-600'>Happy Customers</div>
               </div>
             </div>
@@ -245,7 +245,7 @@ export function ContactInfo() {
                 <Globe className='w-4 h-4 text-green-600' />
               </div>
               <div>
-                <div className='font-semibold text-gray-900'>50,000+</div>
+                <div className='font-semibold text-gray-900'>5,000+</div>
                 <div className='text-sm text-gray-600'>Mobile apps Built</div>
               </div>
             </div>

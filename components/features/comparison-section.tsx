@@ -5,7 +5,49 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check, X, Star, Users, Code, Zap } from "lucide-react";
 
-const competitors = [
+type FeatureKeys =
+  | "AI Mobile app Generation"
+  | "Natural Language Input"
+  | "Instant Preview"
+  | "Code Export"
+  | "Responsive Design"
+  | "SEO Optimization"
+  | "Custom Domains"
+  | "No Coding Required"
+  | "Template Library"
+  | "Drag & Drop"
+  | "Learning Curve"
+  | "Generation Time"
+  | "Customization Level"
+  | "Technical Support";
+
+type Features = {
+  "AI Mobile app Generation": boolean;
+  "Natural Language Input": boolean;
+  "Instant Preview": boolean;
+  "Code Export": boolean;
+  "Responsive Design": boolean;
+  "SEO Optimization": boolean;
+  "Custom Domains": boolean;
+  "No Coding Required": boolean;
+  "Template Library": boolean;
+  "Drag & Drop": boolean;
+  "Learning Curve": string;
+  "Generation Time": string;
+  "Customization Level": string;
+  "Technical Support": string;
+};
+
+type Competitor = {
+  name: string;
+  logo: string;
+  tagline: string;
+  pricing: string;
+  highlight: boolean;
+  features: Features;
+};
+
+const competitors: Competitor[] = [
   {
     name: "BuildAIWeb",
     logo: "🤖",
@@ -131,25 +173,14 @@ export function ComparisonSection() {
         {/* Comparison Table */}
         <div className='overflow-x-auto'>
           <div className='inline-block min-w-full'>
-            <div className='grid grid-cols-1 lg:grid-cols-4 gap-6'>
-              {competitors.map((competitor, index) => (
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+              {competitors.map((competitor) => (
                 <Card
-                  key={index}
-                  className={`relative ${
-                    competitor.highlight
-                      ? "border-2 border-purple-500 shadow-xl"
-                      : "border border-gray-200 shadow-md"
-                  }`}
+                  key={competitor.name}
+                  className={
+                    competitor.highlight ? "border-purple-500 shadow-lg" : ""
+                  }
                 >
-                  {competitor.highlight && (
-                    <div className='absolute -top-3 left-1/2 transform -translate-x-1/2'>
-                      <Badge className='bg-purple-600 text-white px-4 py-1'>
-                        <Star className='w-3 h-3 mr-1' />
-                        Recommended
-                      </Badge>
-                    </div>
-                  )}
-
                   <CardContent className='p-6'>
                     {/* Header */}
                     <div className='text-center mb-6'>
@@ -181,7 +212,7 @@ export function ComparisonSection() {
                           <span className='text-sm text-gray-700'>
                             {feature}
                           </span>
-                          {competitor.features[feature] ? (
+                          {competitor.features[feature as keyof Features] ? (
                             <Check className='w-4 h-4 text-green-500' />
                           ) : (
                             <X className='w-4 h-4 text-red-400' />

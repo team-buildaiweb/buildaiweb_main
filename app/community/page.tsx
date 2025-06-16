@@ -10,7 +10,7 @@ export default function CommunityPage() {
       name: "Discord Community",
       description:
         "Join our Discord server for real-time discussions, support, and collaboration",
-      members: "5,000+",
+      members: "1,000+",
       link: "#",
       buttonText: "Join Discord",
     },
@@ -19,7 +19,7 @@ export default function CommunityPage() {
       name: "Community Forum",
       description:
         "Discuss features, share projects, and get help from other developers",
-      members: "10,000+",
+      members: "1,000+",
       link: "#",
       buttonText: "Visit Forum",
     },
@@ -69,58 +69,68 @@ export default function CommunityPage() {
   ];
 
   return (
-    <div className='min-h-screen bg-white flex flex-col'>
+    <div className='min-h-screen  bg-gray-50 flex flex-col'>
       <Navigation />
-      <main className='flex-1 pt-16 max-w-6xl mx-auto px-4'>
-        <div className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12'>
-          <h1 className='text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
-            Join Our Community
-          </h1>
-          <p className='text-gray-600 text-lg max-w-3xl'>
+      <main className='flex-1 my-20 pt-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        {/* Hero Section */}
+        <section className='bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 text-white rounded-2xl p-12 mb-12'>
+          <h1 className='text-5xl font-bold mb-4'>Join Our Community</h1>
+          <p className='text-lg max-w-3xl'>
             Connect with fellow developers, share your projects, and learn from
             others in the BuildAIWeb community.
           </p>
-        </div>
+        </section>
 
-        <div className='grid md:grid-cols-3 gap-8 mb-12'>
-          {communityChannels.map((channel) => (
-            <div
-              key={channel.id}
-              className='bg-white rounded-lg shadow-sm border border-gray-100 p-6 flex flex-col'
-            >
-              <h2 className='text-2xl font-bold mb-3'>{channel.name}</h2>
-              <p className='text-gray-600 mb-4 flex-grow'>
-                {channel.description}
-              </p>
-              <div className='mb-4'>
-                <span className='text-sm text-gray-500'>
-                  {channel.members} members
-                </span>
-              </div>
-              <a
-                href={channel.link}
-                className='w-full px-4 py-2 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors'
+        {/* Community Channels */}
+        <section className='mb-12'>
+          <h2 className='text-3xl font-bold mb-6 text-purple-800'>
+            Community Channels
+          </h2>
+          <div className='grid md:grid-cols-3 gap-8'>
+            {communityChannels.map((channel) => (
+              <div
+                key={channel.id}
+                className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 p-6 flex flex-col'
               >
-                {channel.buttonText}
-              </a>
-            </div>
-          ))}
-        </div>
+                <h3 className='text-2xl font-semibold mb-3 text-purple-700'>
+                  {channel.name}
+                </h3>
+                <p className='text-gray-600 mb-4 flex-grow'>
+                  {channel.description}
+                </p>
+                <div className='mb-4'>
+                  <span className='text-sm text-gray-500'>
+                    {channel.members} members
+                  </span>
+                </div>
+                <a
+                  href={channel.link}
+                  className='w-full px-4 py-2 bg-purple-600 text-white rounded-lg text-center hover:bg-purple-700 transition-colors'
+                >
+                  {channel.buttonText}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        <div className='mb-12'>
-          <h2 className='text-2xl font-bold mb-6'>Upcoming Community Events</h2>
-          <div className='grid gap-4'>
+        {/* Upcoming Events */}
+        <section className='mb-12'>
+          <h2 className='text-3xl font-bold mb-6 text-purple-800'>
+            Upcoming Community Events
+          </h2>
+          <div className='grid gap-6'>
             {upcomingEvents.map((event) => (
               <div
                 key={event.id}
-                className='bg-white rounded-lg shadow-sm border border-gray-100 p-6'
+                className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 p-6'
               >
                 <div className='flex justify-between items-start'>
                   <div>
-                    <span className='inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mb-2'>
+                    <span className='inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm mb-2'>
                       {event.type}
                     </span>
-                    <h3 className='text-xl font-semibold mb-2'>
+                    <h3 className='text-xl font-semibold mb-2 text-purple-700'>
                       {event.title}
                     </h3>
                     <p className='text-gray-600'>Speaker: {event.speaker}</p>
@@ -133,37 +143,41 @@ export default function CommunityPage() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className='mb-12'>
-          <h2 className='text-2xl font-bold mb-6'>Follow Us</h2>
-          <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+        {/* Social Links */}
+        <section className='mb-12'>
+          <h2 className='text-3xl font-bold mb-6 text-purple-800'>Follow Us</h2>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-6'>
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.link}
-                className='bg-white rounded-lg shadow-sm border border-gray-100 p-4 text-center hover:shadow-md transition-shadow'
+                className='bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200 p-6 text-center'
               >
-                <h3 className='font-semibold mb-2'>{social.name}</h3>
+                <h3 className='font-semibold mb-2 text-purple-700'>
+                  {social.name}
+                </h3>
                 <p className='text-gray-600'>{social.followers} followers</p>
               </a>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className='bg-blue-50 rounded-lg p-8 text-center'>
-          <h2 className='text-2xl font-bold mb-4'>Share Your Story</h2>
-          <p className='text-gray-600 mb-6 max-w-2xl mx-auto'>
+        {/* Share Your Story */}
+        <section className='bg-gradient-to-r from-purple-600 via-purple-500 to-purple-700 text-white rounded-lg p-12 text-center'>
+          <h2 className='text-3xl font-bold mb-4'>Share Your Story</h2>
+          <p className='text-lg mb-6 max-w-2xl mx-auto'>
             Have you built something amazing with BuildAIWeb? We'd love to
             feature your project in our community showcase!
           </p>
           <a
             href='#'
-            className='inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
+            className='inline-flex items-center justify-center px-6 py-3 bg-white text-purple-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors'
           >
             Submit Your Project
           </a>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

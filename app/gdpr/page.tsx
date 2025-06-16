@@ -2,8 +2,15 @@
 
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { useState } from "react";
 
 export default function GDPRPage() {
+  const [expandedRight, setExpandedRight] = useState<string | null>(null);
+
+  const toggleRight = (id: string) => {
+    setExpandedRight(expandedRight === id ? null : id);
+  };
+
   const rights = [
     {
       id: "access",
@@ -81,10 +88,16 @@ export default function GDPRPage() {
               key={right.id}
               className='bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200'
             >
-              <h3 className='text-xl font-semibold mb-3 text-gray-800'>
+              <h3
+                className='text-xl font-semibold mb-3 text-gray-800 cursor-pointer'
+                onClick={() => toggleRight(right.id)}
+                aria-expanded={expandedRight === right.id}
+              >
                 {right.title}
               </h3>
-              <p className='text-gray-600'>{right.description}</p>
+              {expandedRight === right.id && (
+                <p className='text-gray-600'>{right.description}</p>
+              )}
             </div>
           ))}
         </div>

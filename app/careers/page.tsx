@@ -64,7 +64,7 @@ export default function CareersPage() {
   return (
     <div className='min-h-screen bg-white flex flex-col'>
       <Navigation />
-      <main className='flex-1'>
+      <main className='flex-1 my-20'>
         {/* Hero Section */}{" "}
         <div className='pt-16 pb-12 bg-gradient-to-r from-blue-50 to-indigo-50'>
           <div className='max-w-4xl mx-auto px-4 text-center'>
@@ -133,7 +133,7 @@ export default function CareersPage() {
           <JoinUsSection />
         </div>{" "}
         {/* CTA Section */}
-        <section className='py-16 bg-gradient-to-r from-blue-50 to-indigo-50'>
+        {/* <section className='py-16 bg-gradient-to-r from-blue-50 to-indigo-50'>
           <div className='max-w-4xl mx-auto px-4 text-center'>
             <h2 className='text-3xl font-bold mb-4'>
               Don't See Your Perfect Role?
@@ -161,7 +161,7 @@ export default function CareersPage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </div>
