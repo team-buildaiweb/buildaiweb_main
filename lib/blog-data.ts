@@ -1,47 +1,47 @@
 export interface BlogPost {
-  id: string
-  title: string
-  excerpt: string
-  content: string
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
   author: {
-    name: string
-    avatar: string
-    role: string
-  }
-  publishedAt: string
-  readTime: number
-  category: string
-  tags: string[]
-  image: string
-  featured: boolean
+    name: string;
+    avatar: string;
+    role: string;
+  };
+  publishedAt: string;
+  readTime: number;
+  category: string;
+  tags: string[];
+  image: string;
+  featured: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
   {
-    id: "prompt-driven-site-building",
-    title: "How Prompt-Driven Site Building is Changing the Web",
+    id: "prompt-driven-app-building",
+    title: "How Prompt-Driven App Building is Changing Mobile Development",
     excerpt:
-      "Discover how natural language prompts are revolutionizing web development, making it accessible to everyone regardless of technical expertise.",
+      "Discover how natural language prompts are revolutionizing mobile app development, making it accessible to everyone regardless of technical expertise.",
     content: `
-# How Prompt-Driven Site Building is Changing the Web
+# How Prompt-Driven App Building is Changing Mobile Development
 
-The web development landscape is undergoing a fundamental transformation. What once required months of learning HTML, CSS, and JavaScript can now be accomplished with a simple conversation. Welcome to the era of prompt-driven site building.
+The mobile app development landscape is undergoing a fundamental transformation. What once required months of learning Swift, Kotlin, or React Native can now be accomplished with a simple conversation. Welcome to the era of prompt-driven app building.
 
 ## The Revolution is Here
 
-Traditional web development has always been a barrier to entry for many entrepreneurs, designers, and content creators. The technical complexity, the need to understand multiple programming languages, and the time investment required have kept countless ideas from becoming reality.
+Traditional mobile development has always been a barrier to entry for many entrepreneurs, designers, and content creators. The technical complexity, the need to understand multiple programming languages, and the time investment required have kept countless ideas from becoming reality.
 
 But artificial intelligence is changing all of that.
 
 ## What is Prompt-Driven Development?
 
-Prompt-driven development allows users to describe their vision in natural language and receive a fully functional website in return. Instead of writing code, you write descriptions:
+Prompt-driven development allows users to describe their vision in natural language and receive a fully functional mobile app in return. Instead of writing code, you write descriptions:
 
-- "Create a modern SaaS landing page with pricing tiers"
-- "Build a photography portfolio with a dark theme"
-- "Design an e-commerce store for handmade jewelry"
+- "Create a fitness tracker app with AI-powered workout suggestions"
+- "Build a photo-sharing app with smart filters"
+- "Design a personal finance app with spending insights"
 
-The AI interprets these prompts, understands the context, and generates production-ready code that follows best practices.
+The AI interprets these prompts, understands the context, and generates production-ready code that follows best practices for iOS, Android, or cross-platform.
 
 ## The Technical Magic Behind the Scenes
 
@@ -51,37 +51,37 @@ Our AI system combines several advanced technologies:
 The system first parses your prompt to understand intent, style preferences, and functional requirements.
 
 ### Design Pattern Recognition
-Drawing from thousands of successful websites, the AI identifies the most appropriate layout patterns and design elements.
+Drawing from thousands of successful mobile apps, the AI identifies the most appropriate layout patterns and design elements.
 
 ### Code Generation
-Using modern frameworks like Tailwind CSS and React, the system generates clean, maintainable code that follows industry standards.
+Using modern frameworks like SwiftUI, Jetpack Compose, and React Native, the system generates clean, maintainable code that follows industry standards.
 
 ### Responsive Optimization
-Every generated site is automatically optimized for mobile, tablet, and desktop viewing.
+Every generated app is automatically optimized for all device sizes and orientations.
 
 ## Real-World Impact
 
 We've seen incredible results from our early users:
 
-- **Startup founders** launching MVPs in hours instead of months
-- **Small businesses** creating professional websites without hiring developers
+- **Startup founders** launching MVPs in days instead of months
+- **Small businesses** creating professional mobile apps without hiring developers
 - **Designers** rapidly prototyping ideas for client presentations
-- **Marketers** building landing pages for campaigns in real-time
+- **Marketers** building campaign apps in real-time
 
-## The Future of Web Development
+## The Future of Mobile Development
 
 This is just the beginning. As AI continues to evolve, we're working on:
 
 - **Advanced customization** through iterative prompts
-- **Integration capabilities** with popular tools and services
-- **Performance optimization** that rivals hand-coded sites
-- **Accessibility features** built into every generated site
+- **Integration capabilities** with popular APIs and services
+- **Performance optimization** that rivals hand-coded apps
+- **Accessibility features** built into every generated app
 
 ## Getting Started
 
-Ready to experience the future of web development? Try our platform today and see how quickly you can go from idea to live website.
+Ready to experience the future of mobile app development? Try our platform today and see how quickly you can go from idea to live app.
 
-The web is becoming more accessible, more creative, and more powerful than ever before. Join us in shaping this exciting future.
+Mobile is becoming more accessible, more creative, and more powerful than ever before. Join us in shaping this exciting future.
     `,
     author: {
       name: "Sarah Chen",
@@ -91,112 +91,103 @@ The web is becoming more accessible, more creative, and more powerful than ever 
     publishedAt: "2024-01-15",
     readTime: 8,
     category: "AI Technology",
-    tags: ["AI", "Web Development", "Innovation", "Future Tech"],
+    tags: ["AI", "Mobile App Development", "Innovation", "Future Tech"],
     image: "/placeholder.svg?height=400&width=600",
     featured: true,
   },
   {
-    id: "layout-patterns-ai-engine",
-    title: "10 Layout Patterns Trained into Our AI Engine",
+    id: "mobile-layout-patterns-ai-engine",
+    title: "10 Mobile Layout Patterns Trained into Our AI Engine",
     excerpt:
-      "Explore the most effective website layout patterns that our AI has learned from analyzing thousands of successful websites.",
+      "Explore the most effective mobile app layout patterns that our AI has learned from analyzing thousands of successful mobile apps.",
     content: `
-# 10 Layout Patterns Trained into Our AI Engine
+# 10 Mobile Layout Patterns Trained into Our AI Engine
 
-Our AI has analyzed over 50,000 successful websites to identify the most effective layout patterns. Here are the top 10 patterns that consistently drive engagement and conversions.
+Our AI has analyzed over 50,000 successful mobile apps to identify the most effective layout patterns. Here are the top 10 patterns that consistently drive engagement and conversions.
 
-## 1. The Hero-First Landing Page
+## 1. The Onboarding Flow
 
-**Usage:** SaaS products, apps, services
-**Key Elements:** Large headline, subheadline, CTA button, hero image/video
-**Why it works:** Immediately communicates value proposition
+**Usage:** Apps with user accounts or personalization  
+**Key Elements:** Welcome screens, progress indicators, permission requests  
+**Why it works:** Smoothly introduces users to app features
 
-## 2. The F-Pattern Blog Layout
+## 2. The Tabbed Navigation
 
-**Usage:** Content sites, blogs, news platforms
-**Key Elements:** Header navigation, sidebar, main content area
-**Why it works:** Follows natural eye movement patterns
+**Usage:** Social, productivity, and utility apps  
+**Key Elements:** Bottom or top tab bar, clear icons, easy switching  
+**Why it works:** Familiar navigation for quick access
 
-## 3. The Portfolio Grid
+## 3. The Feed
 
-**Usage:** Creative professionals, agencies, photographers
-**Key Elements:** Masonry or uniform grid, hover effects, project details
-**Why it works:** Showcases work effectively without overwhelming
+**Usage:** Social, news, content apps  
+**Key Elements:** Infinite scroll, cards, media previews  
+**Why it works:** Keeps users engaged with fresh content
 
-## 4. The E-commerce Product Focus
+## 4. The Card Grid
 
-**Usage:** Online stores, product showcases
-**Key Elements:** Large product images, clear pricing, add-to-cart prominence
-**Why it works:** Reduces friction in the buying process
+**Usage:** E-commerce, gallery, portfolio  
+**Key Elements:** Grid layout, tappable cards, quick actions  
+**Why it works:** Showcases multiple items efficiently
 
-## 5. The Restaurant Menu Layout
+## 5. The Profile Page
 
-**Usage:** Restaurants, cafes, food services
-**Key Elements:** Appetizing imagery, clear menu sections, contact info
-**Why it works:** Drives both online orders and foot traffic
+**Usage:** Social, fitness, finance  
+**Key Elements:** Avatar, stats, settings, activity feed  
+**Why it works:** Centralizes user info and actions
 
-## 6. The Corporate Trust Builder
+## 6. The Chat Interface
 
-**Usage:** B2B companies, professional services
-**Key Elements:** Team photos, testimonials, case studies, credentials
-**Why it works:** Establishes credibility and trust
+**Usage:** Messaging, support, community  
+**Key Elements:** Message bubbles, input bar, attachments  
+**Why it works:** Enables real-time communication
 
-## 7. The Event Landing Page
+## 7. The Dashboard
 
-**Usage:** Conferences, workshops, webinars
-**Key Elements:** Date/time prominence, speaker lineup, registration CTA
-**Why it works:** Creates urgency and highlights value
+**Usage:** Analytics, finance, productivity  
+**Key Elements:** Charts, summaries, quick links  
+**Why it works:** Gives users a snapshot of key data
 
-## 8. The App Showcase
+## 8. The List & Detail
 
-**Usage:** Mobile apps, software products
-**Key Elements:** App screenshots, feature highlights, download buttons
-**Why it works:** Demonstrates functionality clearly
+**Usage:** Shopping, task, booking  
+**Key Elements:** List view, detail page, add/edit actions  
+**Why it works:** Simple navigation for item-based apps
 
-## 9. The Personal Brand Hub
+## 9. The Map View
 
-**Usage:** Consultants, speakers, thought leaders
-**Key Elements:** Professional photo, bio, services, contact
-**Why it works:** Builds personal connection and authority
+**Usage:** Travel, delivery, local discovery  
+**Key Elements:** Interactive map, pins, filters  
+**Why it works:** Visualizes location-based data
 
-## 10. The Nonprofit Impact Story
+## 10. The Settings Panel
 
-**Usage:** Charities, causes, social organizations
-**Key Elements:** Mission statement, impact metrics, donation CTA
-**Why it works:** Emotional connection drives action
+**Usage:** All apps  
+**Key Elements:** Toggles, preferences, account management  
+**Why it works:** Empowers users to personalize their experience
 
 ## How Our AI Chooses the Right Pattern
 
 When you submit a prompt, our AI:
 
-1. **Analyzes intent** - What type of website are you building?
-2. **Identifies audience** - Who will be visiting this site?
-3. **Determines goals** - What actions should visitors take?
+1. **Analyzes intent** - What type of app are you building?
+2. **Identifies audience** - Who will use this app?
+3. **Determines goals** - What actions should users take?
 4. **Selects pattern** - Which layout best serves these needs?
 5. **Customizes elements** - How can we make it unique to your brand?
-
-## The Science Behind Layout Success
-
-Our training data reveals fascinating insights:
-
-- **Above-the-fold CTAs** convert 73% better than below-the-fold
-- **Left-aligned text** improves readability by 45%
-- **White space** increases comprehension by 20%
-- **Consistent navigation** reduces bounce rate by 35%
 
 ## Continuous Learning
 
 Our AI engine continuously learns from:
 - User feedback and iterations
-- A/B test results from generated sites
+- A/B test results from generated apps
 - Industry design trends and best practices
 - Accessibility and performance metrics
 
-This means every website we generate benefits from the collective success of all previous sites.
+This means every mobile app we generate benefits from the collective success of all previous apps.
 
 ## Ready to See These Patterns in Action?
 
-Try our AI website builder and watch as it intelligently selects and customizes the perfect layout pattern for your specific needs.
+Try our AI mobile app builder and watch as it intelligently selects and customizes the perfect layout pattern for your specific needs.
     `,
     author: {
       name: "Marcus Rodriguez",
@@ -206,29 +197,29 @@ Try our AI website builder and watch as it intelligently selects and customizes 
     publishedAt: "2024-01-12",
     readTime: 6,
     category: "Design Patterns",
-    tags: ["Design", "UX", "Layouts", "Best Practices"],
+    tags: ["Design", "UX", "Layouts", "Mobile", "Best Practices"],
     image: "/placeholder.svg?height=400&width=600",
     featured: true,
   },
   {
-    id: "figma-to-frontend-ai",
-    title: "From Figma to Frontend with AI",
+    id: "figma-to-mobile-frontend-ai",
+    title: "From Figma to Mobile Frontend with AI",
     excerpt:
-      "Learn how AI is bridging the gap between design and development, automatically converting Figma designs into production-ready code.",
+      "Learn how AI is bridging the gap between mobile design and development, automatically converting Figma designs into production-ready code.",
     content: `
-# From Figma to Frontend with AI
+# From Figma to Mobile Frontend with AI
 
-The handoff from design to development has always been one of the most friction-filled processes in web creation. Designers create beautiful mockups in Figma, developers interpret them into code, and somewhere in translation, the vision gets lost.
+The handoff from design to development has always been one of the most friction-filled processes in mobile app creation. Designers create beautiful mockups in Figma, developers interpret them into code, and somewhere in translation, the vision gets lost.
 
 Not anymore.
 
 ## The Traditional Design-to-Code Problem
 
-Every web team knows this pain:
+Every mobile team knows this pain:
 
-- **Design specifications** that don't account for responsive behavior
+- **Design specifications** that don't account for device variations
 - **Asset extraction** that takes hours of manual work  
-- **CSS interpretation** that never quite matches the original design
+- **UI interpretation** that never quite matches the original design
 - **Iteration cycles** that slow down the entire project
 
 ## How AI Changes Everything
@@ -244,9 +235,8 @@ The AI examines your Figma design and understands:
 
 ### Semantic Code Generation
 Instead of generating messy, hard-to-maintain code, our AI creates:
-- Clean, semantic HTML structure
-- Efficient Tailwind CSS classes
-- Responsive breakpoints that make sense
+- Clean, semantic code for SwiftUI, Jetpack Compose, or React Native
+- Responsive layouts for all device sizes
 - Accessible markup by default
 
 ### Component Recognition
@@ -258,7 +248,7 @@ The AI identifies reusable components and creates:
 
 ## Real-World Case Study
 
-**Challenge:** A startup needed to convert their 15-page Figma design system into a working website in 48 hours for a product launch.
+**Challenge:** A startup needed to convert their 15-page Figma design system into a working mobile app in 48 hours for a product launch.
 
 **Traditional Approach:** Would have required 2-3 developers working around the clock, likely missing the deadline.
 
@@ -267,47 +257,6 @@ The AI identifies reusable components and creates:
 - AI generates complete codebase in 12 minutes
 - Minor adjustments and customizations in 2 hours
 - Deployed and live 46 hours ahead of schedule
-
-## The Technical Process
-
-Here's what happens when you upload a Figma design:
-
-### 1. Design Parsing
-- Extract all design elements and properties
-- Identify layout patterns and relationships
-- Analyze typography and spacing systems
-- Map color schemes and design tokens
-
-### 2. Structure Planning
-- Create semantic HTML outline
-- Plan responsive behavior
-- Identify component boundaries
-- Optimize for performance
-
-### 3. Code Generation
-- Generate clean, production-ready HTML
-- Create efficient CSS with Tailwind
-- Add interactive JavaScript where needed
-- Ensure accessibility compliance
-
-### 4. Optimization
-- Compress and optimize images
-- Minimize CSS and JavaScript
-- Add performance optimizations
-- Test across devices and browsers
-
-## Beyond Static Designs
-
-Our AI doesn't just convert static mockups—it adds intelligence:
-
-### Responsive Intelligence
-The AI makes smart decisions about how designs should adapt across screen sizes, even when the original Figma file only shows desktop layouts.
-
-### Interactive Enhancements
-Common UI patterns are automatically enhanced with appropriate interactions, hover states, and micro-animations.
-
-### Performance Optimization
-The generated code is optimized for speed, with lazy loading, efficient CSS, and minimal JavaScript.
 
 ## Best Practices for Figma-to-AI Conversion
 
@@ -319,18 +268,9 @@ To get the best results:
 4. **Include mobile layouts** when possible
 5. **Use Figma components** for repeated elements
 
-## The Future of Design-to-Code
-
-We're continuously improving our AI with:
-
-- **Advanced animation detection** from Figma prototypes
-- **Custom component libraries** that match your design system
-- **Real-time collaboration** between designers and developers
-- **Version control integration** for seamless workflows
-
 ## Ready to Transform Your Workflow?
 
-Experience the future of design-to-development handoffs. Upload your Figma design and watch as AI transforms it into production-ready code in minutes, not days.
+Experience the future of design-to-development handoffs. Upload your Figma design and watch as AI transforms it into production-ready mobile code in minutes, not days.
 
 The gap between design and development is closing. Be part of the revolution.
     `,
@@ -342,98 +282,86 @@ The gap between design and development is closing. Be part of the revolution.
     publishedAt: "2024-01-10",
     readTime: 7,
     category: "Design to Code",
-    tags: ["Figma", "AI", "Workflow", "Development"],
+    tags: ["Figma", "AI", "Mobile", "Workflow", "Development"],
     image: "/placeholder.svg?height=400&width=600",
     featured: false,
   },
   {
-    id: "ai-seo-optimization",
-    title: "AI-Powered SEO: How Our Engine Optimizes Every Generated Site",
+    id: "ai-app-store-optimization",
+    title: "AI-Powered ASO: How Our Engine Optimizes Every Generated App",
     excerpt:
-      "Discover how our AI automatically implements advanced SEO strategies in every website it generates, ensuring maximum search visibility.",
+      "Discover how our AI automatically implements advanced App Store Optimization strategies in every mobile app it generates, ensuring maximum visibility.",
     content: `
-# AI-Powered SEO: How Our Engine Optimizes Every Generated Site
+# AI-Powered ASO: How Our Engine Optimizes Every Generated App
 
-Search Engine Optimization has become increasingly complex, with hundreds of ranking factors and constantly evolving algorithms. Our AI doesn't just build websites—it builds websites that rank.
+App Store Optimization (ASO) has become increasingly complex, with hundreds of ranking factors and constantly evolving algorithms. Our AI doesn't just build mobile apps—it builds mobile apps that get discovered.
 
-## The SEO Challenge
+## The ASO Challenge
 
-Modern SEO requires expertise in:
+Modern ASO requires expertise in:
 - Technical optimization
 - Content strategy
 - User experience signals
-- Core Web Vitals
+- App performance
 - Schema markup
 - Mobile optimization
 
-Most website builders ignore these factors, leaving users with beautiful sites that nobody can find.
+Most app builders ignore these factors, leaving users with beautiful apps that nobody can find.
 
-## Our AI's SEO Intelligence
+## Our AI's ASO Intelligence
 
-Every website generated by our AI includes:
+Every mobile app generated by our AI includes:
 
-### Technical SEO Foundation
-- Clean, semantic HTML structure
-- Optimized meta tags and descriptions
-- Proper heading hierarchy (H1-H6)
+### Technical ASO Foundation
+- Clean, semantic code structure
+- Optimized app metadata and descriptions
+- Proper keyword targeting
 - Fast loading times
-- Mobile-responsive design
-- SSL certificate ready
+- Responsive design for all devices
 
 ### Content Optimization
 - Keyword-optimized copy based on your industry
 - Natural language that reads well for humans
 - Proper keyword density and distribution
 - Related keyword integration
-- Content length optimization
 
 ### Performance Optimization
-- Compressed images with proper alt tags
-- Minified CSS and JavaScript
+- Compressed images and assets
+- Minified code
 - Lazy loading for images
 - Efficient code structure
-- CDN-ready assets
 
 ## Real Results
 
-Sites generated by our AI consistently achieve:
+Apps generated by our AI consistently achieve:
 - **40% faster** loading times than industry average
-- **65% better** mobile performance scores
+- **65% better** performance scores
 - **80% higher** accessibility ratings
-- **3x more** organic traffic within 90 days
+- **3x more** organic downloads within 90 days
 
-## The AI SEO Process
+## The AI ASO Process
 
-When generating your site, our AI:
+When generating your app, our AI:
 
 1. **Analyzes your industry** and target keywords
 2. **Researches competitors** and successful patterns
 3. **Generates optimized content** that ranks well
-4. **Implements technical SEO** best practices
+4. **Implements technical ASO** best practices
 5. **Tests performance** across all metrics
 
 ## Advanced Features
 
 ### Schema Markup
-Every site includes appropriate structured data:
+Every app includes appropriate structured data:
 - Business information
 - Product details
-- Article markup
 - Review schemas
-- Event information
 
-### Core Web Vitals Optimization
+### Core Performance Optimization
 Our AI ensures excellent scores for:
-- Largest Contentful Paint (LCP)
-- First Input Delay (FID)
-- Cumulative Layout Shift (CLS)
-
-### Local SEO
-For local businesses, we automatically include:
-- Google My Business optimization
-- Local schema markup
-- Location-based keywords
-- Contact information prominence
+- App launch time
+- Responsiveness
+- Smooth animations
 
 ## Continuous Monitoring
 
@@ -443,31 +371,31 @@ Our AI doesn't stop at generation—it provides:
 - Technical issue alerts
 - Ranking improvement tips
 
-## Getting Started with AI SEO
+## Getting Started with AI ASO
 
-Ready to build a website that ranks? Our AI handles all the technical complexity while you focus on your business.
+Ready to build a mobile app that gets discovered? Our AI handles all the technical complexity while you focus on your business.
     `,
     author: {
       name: "David Kim",
       avatar: "/placeholder.svg?height=40&width=40",
-      role: "SEO Specialist",
+      role: "ASO Specialist",
     },
     publishedAt: "2024-01-08",
     readTime: 5,
-    category: "SEO",
-    tags: ["SEO", "Performance", "Rankings", "Technical"],
+    category: "ASO",
+    tags: ["ASO", "Performance", "Rankings", "Mobile", "AI"],
     image: "/placeholder.svg?height=400&width=600",
     featured: false,
   },
   {
-    id: "future-of-web-development",
-    title: "The Future of Web Development: AI, No-Code, and Beyond",
+    id: "future-of-mobile-development",
+    title: "The Future of Mobile App Development: AI, No-Code, and Beyond",
     excerpt:
-      "Explore what's coming next in web development as AI continues to evolve and reshape how we build for the web.",
+      "Explore what's coming next in mobile app development as AI continues to evolve and reshape how we build for mobile.",
     content: `
-# The Future of Web Development: AI, No-Code, and Beyond
+# The Future of Mobile App Development: AI, No-Code, and Beyond
 
-Web development is at an inflection point. The tools, processes, and skills that defined our industry for decades are rapidly evolving. Here's where we're headed.
+Mobile app development is at an inflection point. The tools, processes, and skills that defined our industry for decades are rapidly evolving. Here's where we're headed.
 
 ## The Current Transformation
 
@@ -477,7 +405,7 @@ We're witnessing several simultaneous shifts:
 Instead of writing code, developers are increasingly describing what they want to build. AI translates intent into implementation.
 
 ### From Manual to Automated
-Repetitive tasks like responsive design, browser compatibility, and performance optimization are becoming automated.
+Repetitive tasks like responsive design, device compatibility, and performance optimization are becoming automated.
 
 ### From Technical to Creative
 As AI handles the technical complexity, developers can focus more on user experience, creativity, and problem-solving.
@@ -485,10 +413,10 @@ As AI handles the technical complexity, developers can focus more on user experi
 ## What's Coming Next
 
 ### Conversational Development
-Imagine building entire applications through conversation:
-- "Add user authentication with Google and Facebook login"
-- "Create a dashboard showing sales metrics from our Stripe account"
-- "Build a mobile app version of this website"
+Imagine building entire mobile apps through conversation:
+- "Add user authentication with Google and Apple login"
+- "Create a dashboard showing health metrics from Apple Health"
+- "Build a chat app with AI-powered suggestions"
 
 ### Intelligent Code Evolution
 AI will continuously improve your codebase:
@@ -540,7 +468,7 @@ New skills will emerge:
 - Faster time-to-market
 - Reduced development costs
 - More experimentation opportunities
-- Democratized web development
+- Democratized mobile app development
 
 ## Preparing for the Future
 
@@ -560,7 +488,7 @@ New skills will emerge:
 
 ### Next 2 Years
 - AI-assisted development becomes mainstream
-- No-code tools handle 80% of common website needs
+- No-code tools handle 80% of common mobile app needs
 - Traditional development focuses on complex applications
 
 ### Next 5 Years
@@ -575,7 +503,7 @@ New skills will emerge:
 
 ## Embracing the Change
 
-The future of web development is exciting, not threatening. By embracing AI tools and focusing on higher-level problem-solving, developers can:
+The future of mobile app development is exciting, not threatening. By embracing AI tools and focusing on higher-level problem-solving, developers can:
 
 - Build better products faster
 - Focus on creativity and innovation
@@ -596,13 +524,20 @@ The future is being built today. Be part of it.
     publishedAt: "2024-01-05",
     readTime: 9,
     category: "Future Tech",
-    tags: ["Future", "AI", "No-Code", "Industry Trends"],
+    tags: ["Future", "AI", "No-Code", "Mobile", "Industry Trends"],
     image: "/placeholder.svg?height=400&width=600",
     featured: false,
   },
-]
+];
 
-export const categories = ["All", "AI Technology", "Design Patterns", "Design to Code", "SEO", "Future Tech"]
+export const categories = [
+  "All",
+  "AI Technology",
+  "Design Patterns",
+  "Design to Code",
+  "ASO",
+  "Future Tech",
+];
 
-export const featuredPosts = blogPosts.filter((post) => post.featured)
-export const recentPosts = blogPosts.slice(0, 3)
+export const featuredPosts = blogPosts.filter((post) => post.featured);
+export const recentPosts = blogPosts.slice(0, 3);

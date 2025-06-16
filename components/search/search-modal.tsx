@@ -33,7 +33,7 @@ const categoryIcons = {
 }
 
 const popularSearches = [
-  "AI website builder",
+  "AI mobile app builder",
   "Dashboard features",
   "Pricing plans",
   "Getting started",

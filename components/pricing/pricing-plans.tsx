@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Check, Star, Zap, Users, Building, Crown } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Check, Star, Zap, Users, Building, Crown } from "lucide-react";
 
 const plans = [
   {
@@ -16,7 +16,7 @@ const plans = [
     yearlyPrice: 0,
     popular: false,
     features: [
-      "3 AI website builds per month",
+      "3 AI mobile app builds per month",
       "Basic templates library",
       "Standard AI generation",
       "Mobile responsive design",
@@ -25,7 +25,12 @@ const plans = [
       "BuildAIWeb watermark",
       "Export to HTML/CSS",
     ],
-    limitations: ["Limited to 3 builds/month", "Watermark on websites", "No custom domains", "Basic support only"],
+    limitations: [
+      "Limited to 3 builds/month",
+      "Watermark on mobile apps",
+      "No custom domains",
+      "Basic support only",
+    ],
     cta: "Start Free",
     description: "Great for personal projects and testing our AI capabilities",
   },
@@ -38,7 +43,7 @@ const plans = [
     yearlyPrice: 190,
     popular: true,
     features: [
-      "Unlimited AI website builds",
+      "Unlimited AI mobile app builds",
       "Premium templates library",
       "Advanced AI generation",
       "Mobile responsive design",
@@ -79,7 +84,8 @@ const plans = [
     ],
     limitations: [],
     cta: "Start Business Trial",
-    description: "Ideal for teams, agencies, and businesses with multiple projects",
+    description:
+      "Ideal for teams, agencies, and businesses with multiple projects",
   },
   {
     id: "enterprise",
@@ -107,41 +113,51 @@ const plans = [
     cta: "Contact Sales",
     description: "Tailored solutions for enterprise-level requirements",
   },
-]
+];
 
 export function PricingPlans() {
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">(
+    "monthly"
+  );
 
   const getPrice = (plan: (typeof plans)[0]) => {
-    if (plan.monthlyPrice === null) return "Custom"
-    if (plan.monthlyPrice === 0) return "Free"
+    if (plan.monthlyPrice === null) return "Custom";
+    if (plan.monthlyPrice === 0) return "Free";
 
-    const price = billingCycle === "monthly" ? plan.monthlyPrice : Math.round(plan.yearlyPrice / 12)
-    return `$${price}`
-  }
+    const price =
+      billingCycle === "monthly"
+        ? plan.monthlyPrice
+        : Math.round(plan.yearlyPrice / 12);
+    return `$${price}`;
+  };
 
   const getSavings = (plan: (typeof plans)[0]) => {
-    if (plan.monthlyPrice === null || plan.monthlyPrice === 0) return null
-    const monthlyCost = plan.monthlyPrice * 12
-    const savings = monthlyCost - plan.yearlyPrice
-    return Math.round((savings / monthlyCost) * 100)
-  }
+    if (plan.monthlyPrice === null || plan.monthlyPrice === 0) return null;
+    const monthlyCost = plan.monthlyPrice * 12;
+    const savings = monthlyCost - plan.yearlyPrice;
+    return Math.round((savings / monthlyCost) * 100);
+  };
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-            Start with our free plan and upgrade as your needs grow. All plans include our core AI website generation.
+    <section className='py-20 bg-gray-50'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='text-center mb-16'>
+          <h2 className='text-4xl font-bold text-gray-900 mb-4'>
+            Choose Your Plan
+          </h2>
+          <p className='text-xl text-gray-600 max-w-3xl mx-auto mb-8'>
+            Start with our free plan and upgrade as your needs grow. All plans
+            include our core AI mobile app generation.
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex items-center bg-white rounded-lg p-1 shadow-sm border border-gray-200">
+          <div className='inline-flex items-center bg-white rounded-lg p-1 shadow-sm border border-gray-200'>
             <button
               onClick={() => setBillingCycle("monthly")}
               className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                billingCycle === "monthly" ? "bg-purple-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                billingCycle === "monthly"
+                  ? "bg-purple-600 text-white shadow-sm"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Monthly
@@ -149,16 +165,20 @@ export function PricingPlans() {
             <button
               onClick={() => setBillingCycle("yearly")}
               className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
-                billingCycle === "yearly" ? "bg-purple-600 text-white shadow-sm" : "text-gray-600 hover:text-gray-900"
+                billingCycle === "yearly"
+                  ? "bg-purple-600 text-white shadow-sm"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Yearly
-              <Badge className="ml-2 bg-green-100 text-green-800 text-xs">Save 20%</Badge>
+              <Badge className='ml-2 bg-green-100 text-green-800 text-xs'>
+                Save 20%
+              </Badge>
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
           {plans.map((plan) => (
             <Card
               key={plan.id}
@@ -169,70 +189,86 @@ export function PricingPlans() {
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-purple-600 text-white px-4 py-1">
-                    <Star className="w-3 h-3 mr-1" />
+                <div className='absolute -top-4 left-1/2 transform -translate-x-1/2'>
+                  <Badge className='bg-purple-600 text-white px-4 py-1'>
+                    <Star className='w-3 h-3 mr-1' />
                     Most Popular
                   </Badge>
                 </div>
               )}
 
-              <CardHeader className="text-center pb-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-lg mb-4">
-                  <plan.icon className="w-6 h-6 text-purple-600" />
+              <CardHeader className='text-center pb-4'>
+                <div className='inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-lg mb-4'>
+                  <plan.icon className='w-6 h-6 text-purple-600' />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-900">{plan.name}</CardTitle>
-                <p className="text-sm text-gray-600 mt-2">{plan.tagline}</p>
+                <CardTitle className='text-xl font-bold text-gray-900'>
+                  {plan.name}
+                </CardTitle>
+                <p className='text-sm text-gray-600 mt-2'>{plan.tagline}</p>
 
-                <div className="mt-4">
-                  <div className="flex items-baseline justify-center">
-                    <span className="text-4xl font-bold text-gray-900">{getPrice(plan)}</span>
+                <div className='mt-4'>
+                  <div className='flex items-baseline justify-center'>
+                    <span className='text-4xl font-bold text-gray-900'>
+                      {getPrice(plan)}
+                    </span>
                     {plan.monthlyPrice !== null && plan.monthlyPrice > 0 && (
-                      <span className="text-gray-600 ml-1">/month</span>
+                      <span className='text-gray-600 ml-1'>/month</span>
                     )}
                   </div>
                   {billingCycle === "yearly" && getSavings(plan) && (
-                    <Badge className="mt-2 bg-green-100 text-green-800">Save {getSavings(plan)}%</Badge>
+                    <Badge className='mt-2 bg-green-100 text-green-800'>
+                      Save {getSavings(plan)}%
+                    </Badge>
                   )}
                   {billingCycle === "yearly" && plan.monthlyPrice > 0 && (
-                    <p className="text-sm text-gray-500 mt-1">Billed annually (${plan.yearlyPrice}/year)</p>
+                    <p className='text-sm text-gray-500 mt-1'>
+                      Billed annually (${plan.yearlyPrice}/year)
+                    </p>
                   )}
                 </div>
               </CardHeader>
 
-              <CardContent className="pt-0">
-                <p className="text-sm text-gray-600 mb-6 text-center">{plan.description}</p>
+              <CardContent className='pt-0'>
+                <p className='text-sm text-gray-600 mb-6 text-center'>
+                  {plan.description}
+                </p>
 
                 <Button
                   className={`w-full mb-6 ${
                     plan.popular
                       ? "bg-purple-600 hover:bg-purple-700"
                       : plan.id === "enterprise"
-                        ? "bg-gray-900 hover:bg-gray-800"
-                        : "bg-gray-600 hover:bg-gray-700"
+                      ? "bg-gray-900 hover:bg-gray-800"
+                      : "bg-gray-600 hover:bg-gray-700"
                   }`}
                 >
                   {plan.cta}
                 </Button>
 
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-gray-900 text-sm">Features included:</h4>
+                <div className='space-y-3'>
+                  <h4 className='font-semibold text-gray-900 text-sm'>
+                    Features included:
+                  </h4>
                   {plan.features.map((feature, index) => (
-                    <div key={index} className="flex items-start">
-                      <Check className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{feature}</span>
+                    <div key={index} className='flex items-start'>
+                      <Check className='w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0' />
+                      <span className='text-sm text-gray-700'>{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {plan.limitations.length > 0 && (
-                  <div className="mt-6 pt-4 border-t border-gray-200">
-                    <h4 className="font-semibold text-gray-900 text-sm mb-3">Limitations:</h4>
-                    <div className="space-y-2">
+                  <div className='mt-6 pt-4 border-t border-gray-200'>
+                    <h4 className='font-semibold text-gray-900 text-sm mb-3'>
+                      Limitations:
+                    </h4>
+                    <div className='space-y-2'>
                       {plan.limitations.map((limitation, index) => (
-                        <div key={index} className="flex items-start">
-                          <div className="w-4 h-4 border border-gray-300 rounded mr-2 mt-0.5 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-600">{limitation}</span>
+                        <div key={index} className='flex items-start'>
+                          <div className='w-4 h-4 border border-gray-300 rounded mr-2 mt-0.5 flex-shrink-0'></div>
+                          <span className='text-sm text-gray-600'>
+                            {limitation}
+                          </span>
                         </div>
                       ))}
                     </div>
@@ -244,13 +280,15 @@ export function PricingPlans() {
         </div>
 
         {/* Money Back Guarantee */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center px-6 py-3 bg-green-50 border border-green-200 rounded-lg">
-            <Check className="w-5 h-5 text-green-600 mr-2" />
-            <span className="text-green-800 font-medium">30-day money-back guarantee on all paid plans</span>
+        <div className='text-center mt-16'>
+          <div className='inline-flex items-center px-6 py-3 bg-green-50 border border-green-200 rounded-lg'>
+            <Check className='w-5 h-5 text-green-600 mr-2' />
+            <span className='text-green-800 font-medium'>
+              30-day money-back guarantee on all paid plans
+            </span>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
