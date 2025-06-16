@@ -20,7 +20,7 @@ export function CompanyStats() {
   const stats: Stat[] = [
     {
       icon: Users,
-      value: 100000,
+      value: 1000,
       suffix: "+",
       label: "Active Users",
       description: "Creators building amazing mobile apps",
@@ -28,7 +28,7 @@ export function CompanyStats() {
     },
     {
       icon: Globe,
-      value: 500000,
+      value: 5000,
       suffix: "+",
       label: "Mobile apps Created",
       description: "AI-generated sites and counting",
@@ -36,7 +36,7 @@ export function CompanyStats() {
     },
     {
       icon: TrendingUp,
-      value: 99,
+      value: 98,
       suffix: "%",
       label: "Uptime",
       description: "Reliable AI-powered platform",
@@ -44,7 +44,7 @@ export function CompanyStats() {
     },
     {
       icon: Zap,
-      value: 30,
+      value: 50,
       suffix: "s",
       label: "Average Build Time",
       description: "From prompt to mobile app",

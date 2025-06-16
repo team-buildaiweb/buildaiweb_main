@@ -16,59 +16,59 @@ interface JobOpening {
 export function JoinUsSection() {
   const openings: JobOpening[] = [
     {
-      title: "Senior Mobile AI Engineer",
+      title: "Senior AI Engineer",
       department: "Engineering",
       location: "Remote",
       type: "Full-time",
       description:
-        "Lead the integration of advanced AI models into next-gen mobile apps. Collaborate with cross-functional teams to deliver intelligent, user-centric mobile experiences.",
+        "Lead the development of our core AI features and help shape the future of web development. Work on cutting-edge language models and AI-powered code generation.",
       requirements: [
-        "5+ years mobile development (iOS/Android)",
-        "Experience with TensorFlow Lite/Core ML",
-        "AI/ML model deployment on mobile",
-        "Kotlin/Swift expertise",
+        "5+ years of software development experience",
+        "Strong background in AI/ML technologies",
+        "Experience with large language models",
+        "Expertise in Python, TypeScript, or similar",
       ],
     },
     {
-      title: "Mobile Product Designer",
+      title: "Full Stack Developer",
+      department: "Engineering",
+      location: "Remote",
+      type: "Full-time",
+      description:
+        "Build and maintain our web platform, ensuring seamless integration of AI features while delivering an exceptional developer experience.",
+      requirements: [
+        "4+ years full stack development",
+        "Next.js and React expertise",
+        "Experience with API development",
+        "Understanding of AI/ML concepts",
+      ],
+    },
+    {
+      title: "Product Designer",
       department: "Design",
       location: "Remote",
       type: "Full-time",
       description:
-        "Design intuitive, beautiful mobile interfaces that leverage AI to delight users. Shape the look and feel of our flagship AI-powered mobile apps.",
+        "Design intuitive interfaces that make AI-powered web development accessible to everyone. Shape the future of how developers interact with AI.",
       requirements: [
-        "4+ years mobile UI/UX design",
-        "Figma/Sketch proficiency",
-        "Portfolio of mobile apps",
-        "User research & prototyping",
+        "5+ years UX/UI design experience",
+        "Experience designing developer tools",
+        "Strong portfolio showing complex UI",
+        "Figma expertise",
       ],
     },
     {
-      title: "React Native Engineer",
-      department: "Engineering",
-      location: "Remote",
-      type: "Full-time",
-      description:
-        "Build performant cross-platform mobile apps using React Native. Work closely with AI engineers to bring intelligent features to life on mobile.",
-      requirements: [
-        "3+ years React Native",
-        "TypeScript/JavaScript",
-        "Mobile performance optimization",
-        "Experience with native modules",
-      ],
-    },
-    {
-      title: "Mobile DevOps Engineer",
+      title: "DevOps Engineer",
       department: "Infrastructure",
       location: "Remote",
       type: "Full-time",
       description:
-        "Automate and scale our mobile CI/CD pipelines. Ensure seamless delivery and monitoring of AI-powered mobile applications.",
+        "Build and maintain our cloud infrastructure, ensuring high availability and performance of our AI-powered platform.",
       requirements: [
-        "CI/CD for mobile (Fastlane, Bitrise, etc.)",
-        "App Store/Play Store deployment",
-        "Mobile analytics & monitoring",
-        "Cloud services (Firebase, AWS, Azure)",
+        "Strong experience with cloud platforms",
+        "Kubernetes and container expertise",
+        "CI/CD pipeline management",
+        "Security best practices",
       ],
     },
   ];
@@ -77,12 +77,11 @@ export function JoinUsSection() {
     <section className='py-24 bg-gradient-to-br from-purple-900 to-blue-900 text-white'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
-          <h2 className='text-4xl font-bold mb-4'>
-            Join Our Mobile AI Revolution
-          </h2>
+          {" "}
+          <h2 className='text-4xl font-bold mb-4'>Open Positions</h2>
           <p className='text-xl text-purple-100 max-w-3xl mx-auto'>
-            Help us redefine mobile experiences by building intelligent,
-            AI-powered applications for millions of users worldwide.
+            Join us in revolutionizing web development with AI. Help build tools
+            that empower developers worldwide.
           </p>
         </div>
 

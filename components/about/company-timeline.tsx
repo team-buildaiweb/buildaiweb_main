@@ -98,12 +98,12 @@ export function CompanyTimeline() {
       date: "June 2024",
       title: "100K Users",
       description:
-        "Reached 100,000 active users creating amazing mobile apps with AI.",
+        "Reached 1,000 active users creating amazing mobile apps with AI.",
       icon: Users,
       type: "milestone",
       details: [
-        "100,000+ active users",
-        "500,000+ mobile apps created",
+        "1,000+ active users",
+        "5,000+ mobile apps created",
         "Enterprise partnerships",
       ],
     },

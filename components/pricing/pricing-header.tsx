@@ -31,14 +31,14 @@ export function PricingHeader() {
             <div className='inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4'>
               <Users className='w-8 h-8 text-green-600' />
             </div>
-            <h3 className='text-2xl font-bold text-gray-900 mb-2'>10,000+</h3>
+            <h3 className='text-2xl font-bold text-gray-900 mb-2'>1,000+</h3>
             <p className='text-gray-600'>Active Users</p>
           </div>
           <div className='text-center'>
             <div className='inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4'>
               <Zap className='w-8 h-8 text-blue-600' />
             </div>
-            <h3 className='text-2xl font-bold text-gray-900 mb-2'>50,000+</h3>
+            <h3 className='text-2xl font-bold text-gray-900 mb-2'>5,000+</h3>
             <p className='text-gray-600'>Mobile apps Built</p>
           </div>
           <div className='text-center'>
@@ -64,6 +64,38 @@ export function PricingHeader() {
           >
             View All Features
           </Button>
+        </div>
+
+        {/* Feature Highlights */}
+        <div className='flex flex-wrap justify-center gap-4 mb-12'>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <Zap className='w-5 h-5 text-purple-600 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>AI Assistant</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <Users className='w-5 h-5 text-blue-600 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>App Generation with Code</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <TrendingUp className='w-5 h-5 text-green-600 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>AI-Powered Content Suggestions</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <Zap className='w-5 h-5 text-yellow-500 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>One-click Deployment</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <Users className='w-5 h-5 text-pink-600 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>Real-time Collaboration</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <TrendingUp className='w-5 h-5 text-indigo-600 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>SEO Optimization Tools</span>
+          </div>
+          <div className='flex items-center bg-white rounded-lg shadow-sm px-4 py-2'>
+            <Zap className='w-5 h-5 text-red-500 mr-2' />
+            <span className='font-medium text-gray-800 text-sm'>Analytics Dashboard</span>
+          </div>
         </div>
       </div>
     </section>

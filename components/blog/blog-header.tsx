@@ -53,7 +53,7 @@ export function BlogHeader() {
         <div className='flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-600'>
           <div className='flex items-center'>
             <Sparkles className='w-4 h-4 mr-2 text-purple-600' />
-            <span>50+ AI Development Articles</span>
+            <span>10+ AI Development Articles</span>
           </div>
           <div className='flex items-center'>
             <div className='w-4 h-4 mr-2 bg-green-500 rounded-full'></div>

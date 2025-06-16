@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Phone,
@@ -59,6 +60,50 @@ export function ContactInfo() {
     { day: "Saturday", hours: "10:00 AM - 4:00 PM PST" },
     { day: "Sunday", hours: "Closed (AI support available)" },
   ];
+  // Dynamic online/offline status based on current PST time and office hours
+  function getPSTDate() {
+    // PST is UTC-8, PDT is UTC-7 (Daylight Saving). We'll use US Pacific Time.
+    const now = new Date();
+    // Get current time in US Pacific Time (handles DST)
+    const pst = now.toLocaleString("en-US", {
+      timeZone: "America/Los_Angeles",
+    });
+    return new Date(pst);
+  }
+
+  function getOnlineStatus() {
+    const now = getPSTDate();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+
+    // Office hours: Mon-Fri 9:00-18:00, Sat 10:00-16:00, Sun closed (AI support only)
+    if (day >= 1 && day <= 5) {
+      // Monday-Friday
+      if (hour > 9 && hour < 18) return "online";
+      if (hour === 9 && minute >= 0) return "online";
+      if (hour === 18 && minute === 0) return "online";
+      return "offline";
+    }
+    if (day === 6) {
+      // Saturday
+      if (hour > 10 && hour < 16) return "online";
+      if (hour === 10 && minute >= 0) return "online";
+      if (hour === 16 && minute === 0) return "online";
+      return "offline";
+    }
+    // Sunday
+    return "ai";
+  }
+
+  const [status, setStatus] = useState(getOnlineStatus());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStatus(getOnlineStatus());
+    }, 60000); // Update every minute
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className='space-y-6'>
@@ -122,15 +167,55 @@ export function ContactInfo() {
               </div>
             ))}
           </div>
-          <div className='mt-4 p-3 bg-green-50 rounded-lg border border-green-200'>
+          <div
+            className={`mt-4 p-3 rounded-lg border ${
+              status === "online"
+                ? "bg-green-50 border-green-200"
+                : status === "offline"
+                ? "bg-red-50 border-red-200"
+                : "bg-blue-50 border-blue-200"
+            }`}
+          >
             <div className='flex items-center'>
-              <div className='w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse'></div>
-              <span className='text-sm font-medium text-green-800'>
-                Currently Online
+              <div
+                className={`w-2 h-2 rounded-full mr-2 animate-pulse ${
+                  status === "online"
+                    ? "bg-green-500"
+                    : status === "offline"
+                    ? "bg-red-500"
+                    : "bg-blue-500"
+                }`}
+              ></div>
+              <span
+                className={`text-sm font-medium ${
+                  status === "online"
+                    ? "text-green-800"
+                    : status === "offline"
+                    ? "text-red-800"
+                    : "text-blue-800"
+                }`}
+              >
+                {status === "online"
+                  ? "Currently Online"
+                  : status === "offline"
+                  ? "Currently Offline"
+                  : "AI Support Available"}
               </span>
             </div>
-            <p className='text-xs text-green-600 mt-1'>
-              AI support available 24/7
+            <p
+              className={`text-xs mt-1 ${
+                status === "online"
+                  ? "text-green-600"
+                  : status === "offline"
+                  ? "text-red-600"
+                  : "text-blue-600"
+              }`}
+            >
+              {status === "online"
+                ? "Live support available now"
+                : status === "offline"
+                ? "Live support is offline. AI support is available 24/7."
+                : "AI support available 24/7"}
             </p>
           </div>
         </CardContent>
