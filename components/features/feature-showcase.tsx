@@ -9,7 +9,7 @@ import { ArrowRight, Clock, Palette, Smartphone, Zap } from "lucide-react"
 const showcaseFeatures = [
   {
     id: "speed",
-    icon: Zap,
+    icon: "Zap",
     title: "Lightning Fast Generation",
     traditional: {
       title: "Traditional Development",
@@ -33,7 +33,7 @@ const showcaseFeatures = [
   },
   {
     id: "responsive",
-    icon: Smartphone,
+    icon: "Smartphone",
     title: "Automatic Responsive Design",
     traditional: {
       title: "Manual Responsive Coding",
@@ -57,7 +57,7 @@ const showcaseFeatures = [
   },
   {
     id: "design",
-    icon: Palette,
+    icon: "Palette",
     title: "Professional Design System",
     traditional: {
       title: "Manual Design Process",
@@ -81,8 +81,18 @@ const showcaseFeatures = [
   },
 ]
 
+const iconMap = {
+  Zap,
+  Smartphone,
+  Palette,
+}
+
 export function FeatureShowcase() {
   const [activeFeature, setActiveFeature] = useState(0)
+
+  const getIcon = (iconName: string) => {
+    return iconMap[iconName as keyof typeof iconMap]
+  }
 
   return (
     <section className="py-20 bg-gray-50">
@@ -96,21 +106,24 @@ export function FeatureShowcase() {
 
         {/* Feature Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {showcaseFeatures.map((feature, index) => (
-            <Button
-              key={feature.id}
-              onClick={() => setActiveFeature(index)}
-              variant={activeFeature === index ? "default" : "outline"}
-              className={`${
-                activeFeature === index
-                  ? "bg-purple-600 hover:bg-purple-700"
-                  : "border-purple-600 text-purple-600 hover:bg-purple-50"
-              }`}
-            >
-              <feature.icon className="w-4 h-4 mr-2" />
-              {feature.title}
-            </Button>
-          ))}
+          {showcaseFeatures.map((feature, index) => {
+            const IconComponent = getIcon(feature.icon)
+            return (
+              <Button
+                key={feature.id}
+                onClick={() => setActiveFeature(index)}
+                variant={activeFeature === index ? "default" : "outline"}
+                className={`${
+                  activeFeature === index
+                    ? "bg-purple-600 hover:bg-purple-700"
+                    : "border-purple-600 text-purple-600 hover:bg-purple-50"
+                }`}
+              >
+                <IconComponent className="w-4 h-4 mr-2" />
+                {feature.title}
+              </Button>
+            )
+          })}
         </div>
 
         {/* Active Feature Comparison */}
@@ -155,7 +168,10 @@ export function FeatureShowcase() {
             <CardContent className="p-8">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                  <showcaseFeatures[activeFeature].icon className="w-6 h-6 text-purple-600" />
+                  {(() => {
+                    const IconComponent = getIcon(showcaseFeatures[activeFeature].icon)
+                    return <IconComponent className="w-6 h-6 text-purple-600" />
+                  })()}
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">{showcaseFeatures[activeFeature].ai.title}</h3>
