@@ -43,7 +43,7 @@ export function TeamSection() {
     {
       name: "Dr. Aisha Patel",
       role: "Head of AI Research",
-      bio: "PhD in Computer Science from Stanford. Leading our research into next-generation AI models for web development.",
+      bio: "PhD in Computer Science from Stanford. Leading our research into next-generation AI models for mobile app development.",
       image: "/placeholder.svg?height=300&width=300",
       skills: ["Machine Learning", "NLP", "Research"],
       social: {
@@ -101,7 +101,7 @@ export function TeamSection() {
     {
       name: "James Wilson",
       role: "AI Engineer",
-      bio: "Specializes in training and fine-tuning models for web development tasks.",
+      bio: "Specializes in training and fine-tuning models for mobile app development tasks.",
       image: "/placeholder.svg?height=300&width=300",
       skills: ["PyTorch", "Model Training", "MLOps"],
       social: {
@@ -188,7 +188,7 @@ export function TeamSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            The brilliant minds behind BuildAIWeb, working together to democratize web development
+            The brilliant minds behind BuildAIWeb, working together to democratize mobile app development
           </p>
         </div>
 

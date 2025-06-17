@@ -436,8 +436,8 @@ export function Footer() {
             </div>
             <div className='flex items-center space-x-6 text-sm text-gray-400'>
               <Link
-                href='/sitemap'
-                className='hover:text-white transition-colors'
+                href='/sitemap.xml'
+                className='text-gray-400 hover:text-gray-300'
               >
                 Sitemap
               </Link>

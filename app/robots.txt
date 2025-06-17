@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://buildaiweb.com/sitemap.xml
