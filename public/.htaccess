@@ -1,37 +1,46 @@
 # Enable rewriting
+
 RewriteEngine On
 RewriteBase /
 
 # If the request is for an existing file or directory, serve it directly
+
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 # If the exact HTML file exists, serve it (e.g., /about -> /about.html)
+
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^([^/]+)/?$ $1.html [L]
 
 # If we have a directory with index.html, serve it (e.g., /blog/ -> /blog/index.html)
+
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^([^/]+)/?$ $1/index.html [L]
 
 # Handle nested routes (e.g., /blog/post-1 -> /blog/post-1.html)
+
 RewriteCond %{DOCUMENT_ROOT}/$1.html -f
 RewriteRule ^(.+?)/?$ $1.html [L]
 
 # Remove trailing slashes if not a directory
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Special case for home page
+
 RewriteRule ^$ index.html [L]
 
 # Send everything else to 404
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /404.html [L]
 
 # Set security headers
+
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-XSS-Protection "1; mode=block"
@@ -41,27 +50,33 @@ RewriteRule . /404.html [L]
 </IfModule>
 
 # Enable CORS
+
 <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
 </IfModule>
 
 # Set content security policy
+
 <IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: *.buildaiweb.com;"
+    Header set Content-Security-Policy "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: *.buildaiweb.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' data: *.buildaiweb.com https://apis.google.com https://accounts.google.com https://github.com https://api.github.com; connect-src 'self' https://apis.google.com https://accounts.google.com https://github.com https://api.github.com https://*.firebaseapp.com https://*.firebaseio.com https://identitytoolkit.googleapis.com; frame-src 'self' https://accounts.google.com https://github.com https://identitytoolkit.googleapis.com https://buildaiweb.firebaseapp.com;"
 </IfModule>
 
 # Handle 404 errors
+
 ErrorDocument 404 /404.html
 
 # Cache control for static assets
+
 <FilesMatch "\.(ico|pdf|jpg|jpeg|png|webp|gif|js|css|svg|woff|woff2)$">
-    Header set Cache-Control "max-age=31536000, public"
+Header set Cache-Control "max-age=31536000, public"
 </FilesMatch>
 
 # Prevent directory listing
+
 Options -Indexes
 
 # Compress text files
+
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript text/javascript
 </IfModule>

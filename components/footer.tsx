@@ -255,15 +255,15 @@ export function Footer() {
               <div className='flex items-center text-gray-400'>
                 <Phone className='w-4 h-4 mr-3 text-purple-500' />
                 <a
-                  href='tel:+15551234567'
+                  href='tel:+94777724782'
                   className='hover:text-white transition-colors'
                 >
-                  +1 (555) 123-4567
+                  +94 77 772 4782
                 </a>
               </div>
               <div className='flex items-center text-gray-400'>
                 <MapPin className='w-4 h-4 mr-3 text-purple-500' />
-                <span>San Francisco, CA</span>
+                <span>55, 1 Kirimandala Mawatha, Colombo</span>
               </div>
             </div>
 
@@ -448,7 +448,7 @@ export function Footer() {
               <div className='inline-flex items-center px-4 py-2 bg-gray-800 rounded-lg'>
                 <Heart className='w-4 h-4 mr-2 text-red-500' />
                 <span className='text-sm text-gray-300'>
-                  Made with love in United States
+                  Made with love in Sri Lanka
                 </span>
               </div>
             </div>

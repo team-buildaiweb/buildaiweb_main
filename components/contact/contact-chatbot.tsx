@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Send, Bot, User, Loader2, Phone, Mail, Calendar } from "lucide-react";
+import Link from "next/link";
 
 interface ChatMessage {
   id: string;
@@ -321,26 +322,32 @@ export function ContactChatbot() {
         {/* Quick Actions */}
         <div className='px-6 py-3 border-t border-gray-200 bg-gray-50'>
           <div className='flex items-center justify-center space-x-4 text-sm'>
+            <Link href='tel:+94777724782'>
+              <Button
+                variant='ghost'
+                size='sm'
+                className='text-purple-600 hover:bg-purple-50'
+              >
+                <Phone className='w-4 h-4 mr-1' />
+                Call Now
+              </Button>
+            </Link>
+            <Link href='mailto:hello@buildaiweb.com'>
+              <Button
+                variant='ghost'
+                size='sm'
+                className='text-purple-600 hover:bg-purple-50'
+              >
+                <Mail className='w-4 h-4 mr-1' />
+                Email Us
+              </Button>
+            </Link>
+
             <Button
               variant='ghost'
               size='sm'
               className='text-purple-600 hover:bg-purple-50'
-            >
-              <Phone className='w-4 h-4 mr-1' />
-              Call Now
-            </Button>
-            <Button
-              variant='ghost'
-              size='sm'
-              className='text-purple-600 hover:bg-purple-50'
-            >
-              <Mail className='w-4 h-4 mr-1' />
-              Email Us
-            </Button>
-            <Button
-              variant='ghost'
-              size='sm'
-              className='text-purple-600 hover:bg-purple-50'
+              onClick={() => handleSuggestionClick("Schedule a call")}
             >
               <Calendar className='w-4 h-4 mr-1' />
               Book Call
