@@ -8,24 +8,24 @@ import {
   Mail,
   Clock,
   MessageCircle,
-  Twitter,
+  Facebook,
   Linkedin,
-  Github,
   Calendar,
   Zap,
   Users,
   Globe,
 } from "lucide-react";
+import { SiX } from "react-icons/si";
 
 export function ContactInfo() {
   const contactMethods = [
     {
       icon: Phone,
       title: "Phone Support",
-      content: "+1 (555) 123-4567",
+      content: "+94 77 772 4782",
       description: "Mon-Fri, 9AM-6PM PST",
       action: "Call Now",
-      href: "tel:+15551234567",
+      href: "tel:+94777724782",
     },
     {
       icon: Mail,
@@ -46,13 +46,13 @@ export function ContactInfo() {
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/buildaiweb", label: "Twitter" },
+    { icon: SiX, href: "https://x.com/buildaiweb", label: "x" },
     {
       icon: Linkedin,
       href: "https://linkedin.com/company/buildaiweb",
       label: "LinkedIn",
     },
-    { icon: Github, href: "https://github.com/buildaiweb", label: "GitHub" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61577628031714", label: "Facebook" },
   ];
 
   const officeHours = [

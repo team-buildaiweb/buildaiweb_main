@@ -9,8 +9,9 @@ interface BlogPostPageProps {
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find((p) => p.id === params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const resolvedParams = await params;
+  const post = blogPosts.find((p) => p.id === resolvedParams.slug);
 
   if (!post) {
     notFound();

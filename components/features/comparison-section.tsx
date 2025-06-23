@@ -6,34 +6,34 @@ import { Button } from "@/components/ui/button";
 import { Check, X, Star, Users, Code, Zap } from "lucide-react";
 
 type FeatureKeys =
-  | "AI Mobile app Generation"
-  | "Natural Language Input"
-  | "Instant Preview"
-  | "Code Export"
-  | "Responsive Design"
-  | "SEO Optimization"
-  | "Custom Domains"
-  | "No Coding Required"
-  | "Template Library"
-  | "Drag & Drop"
+  | "AI Code Generation"
+  | "Native Performance"
+  | "Cross-Platform"
+  | "Real-time Preview"
+  | "App Store Ready"
+  | "Custom UI/UX"
+  | "Backend Integration"
+  | "Push Notifications"
+  | "Offline Support"
+  | "Visual Editor"
   | "Learning Curve"
-  | "Generation Time"
+  | "Development Time"
   | "Customization Level"
   | "Technical Support";
 
 type Features = {
-  "AI Mobile app Generation": boolean;
-  "Natural Language Input": boolean;
-  "Instant Preview": boolean;
-  "Code Export": boolean;
-  "Responsive Design": boolean;
-  "SEO Optimization": boolean;
-  "Custom Domains": boolean;
-  "No Coding Required": boolean;
-  "Template Library": boolean;
-  "Drag & Drop": boolean;
+  "AI Code Generation": boolean;
+  "Native Performance": boolean;
+  "Cross-Platform": boolean;
+  "Real-time Preview": boolean;
+  "App Store Ready": boolean;
+  "Custom UI/UX": boolean;
+  "Backend Integration": boolean;
+  "Push Notifications": boolean;
+  "Offline Support": boolean;
+  "Visual Editor": boolean;
   "Learning Curve": string;
-  "Generation Time": string;
+  "Development Time": string;
   "Customization Level": string;
   "Technical Support": string;
 };
@@ -51,105 +51,105 @@ const competitors: Competitor[] = [
   {
     name: "BuildAIWeb",
     logo: "🤖",
-    tagline: "AI-Powered Web Builder",
-    pricing: "Free - $20/mo",
+    tagline: "AI-Powered Mobile App Builder",
+    pricing: "Free - $29/mo",
     highlight: true,
     features: {
-      "AI Mobile app Generation": true,
-      "Natural Language Input": true,
-      "Instant Preview": true,
-      "Code Export": true,
-      "Responsive Design": true,
-      "SEO Optimization": true,
-      "Custom Domains": true,
-      "No Coding Required": true,
-      "Template Library": true,
-      "Drag & Drop": false,
+      "AI Code Generation": true,
+      "Native Performance": true,
+      "Cross-Platform": true,
+      "Real-time Preview": true,
+      "App Store Ready": true,
+      "Custom UI/UX": true,
+      "Backend Integration": true,
+      "Push Notifications": true,
+      "Offline Support": true,
+      "Visual Editor": false,
       "Learning Curve": "None",
-      "Generation Time": "2-5 minutes",
+      "Development Time": "Minutes",
       "Customization Level": "High",
       "Technical Support": "24/7 AI + Human",
     },
   },
   {
-    name: "Wix",
-    logo: "🎨",
-    tagline: "Drag & Drop Builder",
-    pricing: "Free - $49/mo",
+    name: "Flutter Flow",
+    logo: "📱",
+    tagline: "Visual App Builder",
+    pricing: "$30 - $100/mo",
     highlight: false,
     features: {
-      "AI Mobile app Generation": false,
-      "Natural Language Input": false,
-      "Instant Preview": true,
-      "Code Export": false,
-      "Responsive Design": true,
-      "SEO Optimization": true,
-      "Custom Domains": true,
-      "No Coding Required": true,
-      "Template Library": true,
-      "Drag & Drop": true,
+      "AI Code Generation": false,
+      "Native Performance": true,
+      "Cross-Platform": true,
+      "Real-time Preview": true,
+      "App Store Ready": true,
+      "Custom UI/UX": true,
+      "Backend Integration": true,
+      "Push Notifications": true,
+      "Offline Support": true,
+      "Visual Editor": true,
       "Learning Curve": "Moderate",
-      "Generation Time": "Hours to days",
+      "Development Time": "Days",
       "Customization Level": "Medium",
       "Technical Support": "Business hours",
     },
   },
   {
-    name: "Squarespace",
-    logo: "⬜",
-    tagline: "Design-Focused Builder",
-    pricing: "$12 - $40/mo",
+    name: "React Native Builder",
+    logo: "⚛️",
+    tagline: "Code-Based Development",
+    pricing: "$49 - $199/mo",
     highlight: false,
     features: {
-      "AI Mobile app Generation": false,
-      "Natural Language Input": false,
-      "Instant Preview": true,
-      "Code Export": false,
-      "Responsive Design": true,
-      "SEO Optimization": true,
-      "Custom Domains": true,
-      "No Coding Required": true,
-      "Template Library": true,
-      "Drag & Drop": true,
-      "Learning Curve": "Steep",
-      "Generation Time": "Days to weeks",
-      "Customization Level": "Low",
-      "Technical Support": "Email only",
+      "AI Code Generation": false,
+      "Native Performance": true,
+      "Cross-Platform": true,
+      "Real-time Preview": true,
+      "App Store Ready": true,
+      "Custom UI/UX": true,
+      "Backend Integration": true,
+      "Push Notifications": true,
+      "Offline Support": true,
+      "Visual Editor": false,
+      "Learning Curve": "High",
+      "Development Time": "Weeks",
+      "Customization Level": "High",
+      "Technical Support": "Community",
     },
   },
   {
-    name: "WordPress.com",
-    logo: "📝",
-    tagline: "Flexible CMS",
-    pricing: "Free - $45/mo",
+    name: "Expo",
+    logo: "🚀",
+    tagline: "Universal App Platform",
+    pricing: "Free - $99/mo",
     highlight: false,
     features: {
-      "AI Mobile app Generation": false,
-      "Natural Language Input": false,
-      "Instant Preview": true,
-      "Code Export": true,
-      "Responsive Design": true,
-      "SEO Optimization": true,
-      "Custom Domains": true,
-      "No Coding Required": false,
-      "Template Library": true,
-      "Drag & Drop": false,
-      "Learning Curve": "Very Steep",
-      "Generation Time": "Weeks",
-      "Customization Level": "Very High",
-      "Technical Support": "Community",
+      "AI Code Generation": false,
+      "Native Performance": true,
+      "Cross-Platform": true,
+      "Real-time Preview": true,
+      "App Store Ready": true,
+      "Custom UI/UX": true,
+      "Backend Integration": true,
+      "Push Notifications": true,
+      "Offline Support": true,
+      "Visual Editor": false,
+      "Learning Curve": "High",
+      "Development Time": "Weeks",
+      "Customization Level": "High",
+      "Technical Support": "Community + Business",
     },
   },
 ];
 
 const keyFeatures = [
-  "AI Mobile app Generation",
-  "Natural Language Input",
-  "Instant Preview",
-  "Code Export",
-  "Responsive Design",
-  "SEO Optimization",
-  "No Coding Required",
+  "AI Code Generation",
+  "Native Performance",
+  "Cross-Platform",
+  "Real-time Preview",
+  "App Store Ready",
+  "Custom UI/UX",
+  "Backend Integration",
 ];
 
 export function ComparisonSection() {
@@ -232,7 +232,7 @@ export function ComparisonSection() {
                       <div className='flex justify-between'>
                         <span>Setup Time:</span>
                         <span className='font-medium'>
-                          {competitor.features["Generation Time"]}
+                          {competitor.features["Development Time"]}
                         </span>
                       </div>
                       <div className='flex justify-between'>

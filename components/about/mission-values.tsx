@@ -1,6 +1,6 @@
 "use client";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, Heart, Zap, Globe, Users, Shield } from "lucide-react";
+import { Target, Heart, Zap, Globe, Users, Shield, Goal } from "lucide-react";
 
 export function MissionValues() {
   const values = [
@@ -42,7 +42,7 @@ export function MissionValues() {
         {/* Mission Statement */}
         <div className='text-center mb-20'>
           <div className='inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6'>
-            <Target className='h-8 w-8 text-white' />
+            <Goal className='h-8 w-8 text-white' />
           </div>
           <h2 className='text-4xl font-bold text-gray-900 mb-6'>Our Mission</h2>
           <p className='text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light'>
@@ -58,11 +58,11 @@ export function MissionValues() {
           <h3 className='text-3xl font-bold text-gray-900 text-center mb-12'>
             Our Values
           </h3>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          <div className='flex flex-wrap gap-8 items-center justify-center'>
             {values.map((value, index) => (
               <Card
                 key={index}
-                className='group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white'
+                className='group hover:shadow-xl md:w-[calc(33%-20px)] transition-all duration-300 border-0 shadow-lg bg-white'
               >
                 <CardContent className='p-6 text-center'>
                   <div className='inline-flex items-center justify-center w-12 h-12 bg-gradient-to-r from-purple-100 to-blue-100 rounded-lg mb-4 group-hover:scale-110 transition-transform duration-300'>

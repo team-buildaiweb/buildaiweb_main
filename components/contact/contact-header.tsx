@@ -13,7 +13,8 @@ export function ContactHeader() {
 
         <h1 className='text-5xl md:text-6xl font-bold text-gray-900 mb-6'>
           Let's Build Something
-          <span className='block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600'>
+          <br />
+          <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600'>
             Amazing Together
           </span>
         </h1>

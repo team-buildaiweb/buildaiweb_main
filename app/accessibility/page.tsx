@@ -145,7 +145,7 @@ export default function AccessibilityPage() {
             improvement, please contact our accessibility team.
           </p>
           <a
-            href='mailto:accessibility@buildaiweb.com'
+            href='mailto:hello@buildaiweb.com'
             className='inline-flex items-center justify-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors'
           >
             Contact Accessibility Team

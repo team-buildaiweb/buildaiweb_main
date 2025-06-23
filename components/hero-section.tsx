@@ -2,11 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles, Smartphone, Zap } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className='relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden'>
+    <section className='relative min-h-screen flex pt-32 items-center justify-center bg-gradient-to-br from-purple-50 via-white to-blue-50 overflow-hidden'>
       {/* Background Animation Elements */}
       <div className='absolute inset-0 overflow-hidden'>
         <div className='absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob'></div>
@@ -61,7 +62,7 @@ export function HeroSection() {
           </div>
 
           {/* AI Bot Animation Placeholder */}
-          <div className='relative max-w-2xl mx-auto animate-fade-in-up animation-delay-600'>
+          <div className='relative max-w-2xl mx-auto animate-fade-in-up animation-delay-600 mb-10'>
             <div className='bg-white rounded-2xl shadow-2xl p-8 border border-gray-200'>
               <div className='flex items-center justify-center space-x-4 mb-6'>
                 <div className='flex items-center space-x-2 bg-purple-100 px-4 py-2 rounded-full'>
@@ -71,17 +72,21 @@ export function HeroSection() {
                   </span>
                 </div>
               </div>
-
-              {/* Simulated Mobile App Components Being Assembled */}
+              <Image
+                src='/images/hero-mobile.webp'
+                alt='AI Bot Building Mobile App'
+                width={1200}
+                height={1500}
+                className='w-full h-auto rounded-3xl shadow-lg transform transition-transform hover:scale-105'
+              />
               <div className='space-y-4'>
-                <div className='flex justify-center space-x-2'>
+                {/*<div className='flex justify-center space-x-2'>
                   <div className='w-4 h-4 bg-purple-400 rounded animate-pulse'></div>
                   <div className='w-4 h-4 bg-blue-400 rounded animate-pulse animation-delay-200'></div>
                   <div className='w-4 h-4 bg-pink-400 rounded animate-pulse animation-delay-400'></div>
                 </div>
 
-                {/* Mobile App Screen Mockup */}
-                <div className='mx-auto w-48 h-80 bg-gray-900 rounded-3xl p-2'>
+                 <div className='mx-auto w-48 h-80 bg-gray-900 rounded-3xl p-2'>
                   <div className='w-full h-full bg-white rounded-2xl p-4'>
                     <div className='space-y-3'>
                       <div className='h-6 bg-gray-200 rounded animate-pulse'></div>
@@ -93,9 +98,8 @@ export function HeroSection() {
                       <div className='h-4 bg-gray-200 rounded w-3/4 animate-pulse animation-delay-400'></div>
                     </div>
                   </div>
-                </div>
+                </div>  */}
               </div>
-
               <div className='mt-6 flex items-center justify-center'>
                 <Smartphone className='w-6 h-6 text-gray-400 mr-2' />
                 <span className='text-gray-500 text-sm'>

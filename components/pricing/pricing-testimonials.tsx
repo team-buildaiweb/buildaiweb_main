@@ -6,36 +6,36 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
+    name: "Suresh Bandara",
     role: "Freelance Designer",
     company: "Design Studio",
     plan: "Pro",
     content:
       "The Pro plan has transformed my workflow. I can now deliver mobile apps to clients in hours instead of weeks. The unlimited builds and premium templates are worth every penny.",
     rating: 5,
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Suresh.svg",
     savings: "Saves 20+ hours per project",
   },
   {
-    name: "Marcus Rodriguez",
+    name: "Nirosha Senanayake",
     role: "Agency Owner",
     company: "Digital Solutions Co",
     plan: "Business",
     content:
       "The Business plan's team collaboration and white-label features are perfect for our agency. We've increased our project capacity by 300% while maintaining quality.",
     rating: 5,
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Nirosha.svg",
     savings: "3x more projects delivered",
   },
   {
-    name: "Emily Watson",
+    name: "Harshini Abeywickrama",
     role: "Startup Founder",
     company: "TechFlow",
     plan: "Pro",
     content:
       "Started with the free plan to test the waters, upgraded to Pro within a week. The AI quality and export options are incredible for the price point.",
     rating: 5,
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Harshini.svg",
     savings: "Reduced development costs by 80%",
   },
 ];

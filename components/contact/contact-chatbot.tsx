@@ -35,13 +35,19 @@ export function ContactChatbot() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messagesEndRef.current) {
+      const parent = messagesEndRef.current.parentElement;
+      if (parent) {
+        parent.scrollTop = parent.scrollHeight;
+      }
+    }
   };
-
   useEffect(() => {
-    scrollToBottom();
+    // Only scroll if there's more than one message (initial message doesn't trigger scroll)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages]);
 
   const generateResponse = (
@@ -136,7 +142,7 @@ export function ContactChatbot() {
     ) {
       return {
         content:
-          "I can connect you with our team right away! Here are the best ways to reach us:\n\n📞 **Phone**: +1 (555) 123-4567\n📧 **Email**: hello@buildaiweb.com\n📅 **Schedule**: Book a call at your convenience\n\nWould you prefer a phone call, email, or scheduled meeting?",
+          "I can connect you with our team right away! Here are the best ways to reach us:\n\n📞 **Phone**: +94 77 772 4782\n📧 **Email**: hello@buildaiweb.com\n📅 **Schedule**: Book a call at your convenience\n\nWould you prefer a phone call, email, or scheduled meeting?",
         suggestions: ["Schedule a call", "Send email", "Get phone support"],
       };
     }
@@ -204,11 +210,13 @@ export function ContactChatbot() {
             Alex is online and ready to help
           </span>
         </div>
-      </CardHeader>
-
-      <CardContent className='flex-1 flex flex-col p-0'>
+      </CardHeader>{" "}
+      <CardContent
+        className='flex-1 overflow-y-auto flex flex-col p-0'
+        style={{ maxHeight: "600px" }}
+      >
         {/* Messages Area */}
-        <div className='flex-1 overflow-y-auto p-6 space-y-4'>
+        <div className='flex-1 p-6 space-y-4' ref={messagesEndRef}>
           {messages.map((message) => (
             <div
               key={message.id}
@@ -307,9 +315,8 @@ export function ContactChatbot() {
                 </div>
               </div>
             )}
-
-          <div ref={messagesEndRef} />
         </div>
+        <div ref={messagesEndRef} />
 
         {/* Quick Actions */}
         <div className='px-6 py-3 border-t border-gray-200 bg-gray-50'>

@@ -100,7 +100,7 @@ export function ContactFAQ() {
               Send us an email
             </a>
             <a
-              href='tel:+15551234567'
+              href='tel:+94777724782'
               className='inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors'
             >
               Call us directly

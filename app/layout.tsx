@@ -5,28 +5,46 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { siteConfig } from "./metadata";
+
 export const metadata: Metadata = {
-  title: "BuildAIWeb - AI-Powered Mobile app development Platform",
-  description:
-    "Build AI-generated mobileapps with just one prompt. The fastest way to go from idea to live site — powered entirely by AI.",
-  keywords:
-    "AI mobileapp builder, mobile app development, artificial intelligence, mobileapp generator, no-code",
-  authors: [{ name: "BuildAIWeb Team" }],
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "BuildAIWeb - AI-Powered Mobile App Development Platform",
+    template: "%s | BuildAIWeb",
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: siteConfig.authors,
+  creator: siteConfig.creator,
   openGraph: {
-    title: "BuildAIWeb - AI-Powered Mobile app development Platform",
-    description:
-      "Build AI-generated mobileapps with just one prompt. The fastest way to go from idea to live site — powered entirely by AI.",
-    url: "https://buildaiweb.com",
-    siteName: "BuildAIWeb",
-    type: "website",
+    ...siteConfig.openGraph,
+    images: siteConfig.openGraph.images,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "BuildAIWeb - AI-Powered Mobile app development Platform",
-    description:
-      "Build AI-generated mobileapps with just one prompt. The fastest way to go from idea to live site — powered entirely by AI.",
+  twitter: siteConfig.twitter,
+  icons: siteConfig.icons,
+  manifest: "/site.webmanifest",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-  generator: "v0.dev",
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+    },
+  },
+  verification: {
+    google: "your-google-site-verification",
+    yandex: "your-yandex-verification",
+  },
 };
 
 export default function RootLayout({

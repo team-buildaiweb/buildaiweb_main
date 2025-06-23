@@ -357,7 +357,7 @@ export function ContactForm() {
           >
             {isSubmitting ? (
               <div className='flex items-center justify-center'>
-                <PulseLoader size='sm' color='white' className='mr-3' />
+                <PulseLoader size='sm' color='purple' className='mr-3' />
                 <div className='text-left'>
                   <div>AI is Analyzing Your Request...</div>
                   <div className='text-sm opacity-75'>

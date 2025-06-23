@@ -7,97 +7,96 @@ import { Badge } from "@/components/ui/badge";
 import {
   Brain,
   Layout,
-  Type,
-  Palette,
   Smartphone,
   Code,
   Zap,
   CheckCircle,
+  Database,
+  Shield,
 } from "lucide-react";
 
 const capabilities = [
   {
-    id: "layout",
-    icon: Layout,
-    title: "Intelligent Layout Engine",
-    description:
-      "AI analyzes your content and automatically creates the perfect layout structure",
-    features: [
-      "Grid-based layouts",
-      "Responsive breakpoints",
-      "Semantic HTML structure",
-      "Accessibility compliant",
-    ],
-    demo: "layout-demo",
-  },
-  {
-    id: "content",
-    icon: Type,
-    title: "AI Content Generator",
-    description:
-      "Creates compelling copy, headlines, and calls-to-action tailored to your industry",
-    features: [
-      "SEO-optimized text",
-      "Brand voice matching",
-      "Call-to-action optimization",
-      "Meta descriptions",
-    ],
-    demo: "content-demo",
-  },
-  {
-    id: "design",
-    icon: Palette,
-    title: "Smart Design System",
-    description:
-      "Selects colors, fonts, and styling that match your brand and industry standards",
-    features: [
-      "Color palette generation",
-      "Typography selection",
-      "Brand consistency",
-      "Modern aesthetics",
-    ],
-    demo: "design-demo",
-  },
-  {
-    id: "responsive",
+    id: "native",
     icon: Smartphone,
-    title: "Responsive Intelligence",
+    title: "Native App Generation",
     description:
-      "Automatically optimizes layouts for all screen sizes and devices",
+      "AI generates high-performance native mobile apps for iOS and Android",
     features: [
-      "Mobile-first approach",
-      "Tablet optimization",
-      "Desktop scaling",
-      "Touch-friendly interfaces",
+      "Native UI components",
+      "Platform-specific features",
+      "Hardware integration",
+      "App store ready",
     ],
-    demo: "responsive-demo",
+    demo: "native-demo",
   },
   {
-    id: "code",
-    icon: Code,
-    title: "Clean Code Generation",
+    id: "architecture",
+    icon: Layout,
+    title: "Smart App Architecture",
     description:
-      "Produces production-ready, maintainable code following best practices",
+      "Automatically creates scalable and maintainable app architecture",
     features: [
-      "Semantic markup",
-      "Optimized CSS",
-      "Minimal JavaScript",
-      "W3C compliant",
+      "State management",
+      "Navigation flows",
+      "Data persistence",
+      "API integration",
     ],
-    demo: "code-demo",
+    demo: "architecture-demo",
   },
   {
     id: "performance",
     icon: Zap,
     title: "Performance Optimization",
-    description: "Built-in optimizations for speed, SEO, and Core Web Vitals",
+    description: "Built-in optimizations for smooth mobile experience",
     features: [
-      "Image optimization",
-      "Code minification",
-      "Lazy loading",
-      "SEO structure",
+      "Memory management",
+      "Battery efficiency",
+      "Offline support",
+      "Fast load times",
     ],
     demo: "performance-demo",
+  },
+  {
+    id: "code",
+    icon: Code,
+    title: "Native Code Generation",
+    description:
+      "Produces clean, efficient code optimized for mobile platforms",
+    features: [
+      "Platform-specific code",
+      "Native APIs usage",
+      "Clean architecture",
+      "Testing support",
+    ],
+    demo: "code-demo",
+  },
+  {
+    id: "backend",
+    icon: Database,
+    title: "Backend Integration",
+    description:
+      "Seamlessly connects your app with cloud services and databases",
+    features: [
+      "API management",
+      "Data sync",
+      "Cloud storage",
+      "Real-time updates",
+    ],
+    demo: "backend-demo",
+  },
+  {
+    id: "security",
+    icon: Shield,
+    title: "Security & Compliance",
+    description: "Enterprise-grade security features built into your app",
+    features: [
+      "Data encryption",
+      "Secure authentication",
+      "Privacy compliance",
+      "Safe storage",
+    ],
+    demo: "security-demo",
   },
 ];
 

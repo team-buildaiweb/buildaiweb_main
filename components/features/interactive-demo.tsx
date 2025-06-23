@@ -14,73 +14,93 @@ import {
   Eye,
   Loader2,
   Sparkles,
+  Smartphone,
 } from "lucide-react";
 import { LoadingSpinner } from "@/components/loading/loading-spinner";
 import { PulseLoader } from "@/components/loading/pulse-loader";
 
 const demoPrompts = [
-  "Create a modern SaaS landing page with pricing tiers and testimonials",
-  "Build a photography portfolio with dark theme and image gallery",
-  "Design a restaurant mobile app with menu and online ordering",
-  "Make an e-commerce store for handmade jewelry with product showcase",
-  "Create a consulting firm mobile app with team profiles and case studies",
+  "Create a social media app with photo sharing and user profiles",
+  "Build a food delivery app with real-time order tracking",
+  "Design a fitness tracking app with workout plans and progress charts",
+  "Make a travel planning app with itinerary management",
+  "Create an e-learning app with video courses and quizzes",
 ];
 
 const generatedLayouts = {
-  saas: `<div class="min-h-screen bg-white">
-  <nav class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <h1 class="text-xl font-bold text-gray-900">SaaSify</h1>
-        </div>
-        <div class="flex items-center space-x-4">
-          <a href="#" class="text-gray-600 hover:text-gray-900">Features</a>
-          <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Get Started</button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  
-  <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h1 class="text-5xl font-bold text-gray-900 mb-6">
-        Streamline Your Workflow with AI
-      </h1>
-      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Automate repetitive tasks and boost productivity with our intelligent platform
-      </p>
-      <button class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">
-        Start Free Trial
-      </button>
-    </div>
-  </section>
-</div>`,
-  portfolio: `<div class="min-h-screen bg-gray-900 text-white">
-  <nav class="bg-gray-900 p-6">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-light">Alex Chen Photography</h1>
-      <div class="space-x-6">
-        <a href="#" class="hover:text-gray-300">Portfolio</a>
-        <a href="#" class="hover:text-gray-300">About</a>
-        <a href="#" class="hover:text-gray-300">Contact</a>
-      </div>
-    </div>
-  </nav>
-  
-  <section class="py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h1 class="text-6xl font-light mb-6">Capturing Moments</h1>
-      <p class="text-xl text-gray-300 mb-12">Professional photography services</p>
-      <div class="grid grid-cols-3 gap-4">
-        <div class="aspect-square bg-gray-700 rounded"></div>
-        <div class="aspect-square bg-gray-700 rounded"></div>
-        <div class="aspect-square bg-gray-700 rounded"></div>
-      </div>
-    </div>
-  </section>
-</div>`,
+  socialApp: `// App.tsx
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Feed" component={FeedScreen} />
+        <Tab.Screen name="Upload" component={UploadScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+// FeedScreen.tsx
+import { View, FlatList, Image } from 'react-native';
+
+function FeedScreen() {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={posts}
+        renderItem={({ item }) => (
+          <View style={styles.post}>
+            <Image source={item.image} style={styles.postImage} />
+            <Text style={styles.caption}>{item.caption}</Text>
+          </View>
+        )}
+      />
+    </View>
+  );
+}`,
+  deliveryApp: `// App.tsx
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Restaurants" component={RestaurantsList} />
+        <Stack.Screen name="Menu" component={RestaurantMenu} />
+        <Stack.Screen name="Cart" component={ShoppingCart} />
+        <Stack.Screen name="Tracking" component={OrderTracking} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+// OrderTracking.tsx
+import MapView, { Marker } from 'react-native-maps';
+
+function OrderTracking() {
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.map}>
+        <Marker coordinate={driverLocation} />
+        <Marker coordinate={destinationLocation} />
+      </MapView>
+      <View style={styles.status}>
+        <Text style={styles.eta}>Estimated Delivery: 15 mins</Text>
+        <Text style={styles.driver}>John is on the way</Text>
+      </View>
+    </View>
+  );
+}`,
 };
 
 export function InteractiveDemo() {
@@ -100,13 +120,10 @@ export function InteractiveDemo() {
 
     // Determine which layout to show based on prompt
     const lowerPrompt = prompt.toLowerCase();
-    let selectedLayout = generatedLayouts.saas;
+    let selectedLayout = generatedLayouts.socialApp;
 
-    if (
-      lowerPrompt.includes("portfolio") ||
-      lowerPrompt.includes("photographer")
-    ) {
-      selectedLayout = generatedLayouts.portfolio;
+    if (lowerPrompt.includes("delivery") || lowerPrompt.includes("food")) {
+      selectedLayout = generatedLayouts.deliveryApp;
     }
 
     setGeneratedCode(selectedLayout);
@@ -124,68 +141,87 @@ export function InteractiveDemo() {
   };
 
   const demoPrompts = [
-    "Create a modern SaaS landing page with pricing tiers and testimonials",
-    "Build a photography portfolio with dark theme and image gallery",
-    "Design a restaurant mobile app with menu and online ordering",
-    "Make an e-commerce store for handmade jewelry with product showcase",
-    "Create a consulting firm mobile app with team profiles and case studies",
+    "Create a social media app with photo sharing and user profiles",
+    "Build a food delivery app with real-time order tracking",
+    "Design a fitness tracking app with workout plans and progress charts",
+    "Make a travel planning app with itinerary management",
+    "Create an e-learning app with video courses and quizzes",
   ];
 
   const generatedLayouts = {
-    saas: `<div class="min-h-screen bg-white">
-    <nav class="bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-          <div class="flex items-center">
-            <h1 class="text-xl font-bold text-gray-900">SaaSify</h1>
-          </div>
-          <div class="flex items-center space-x-4">
-            <a href="#" class="text-gray-600 hover:text-gray-900">Features</a>
-            <a href="#" class="text-gray-600 hover:text-gray-900">Pricing</a>
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg">Get Started</button>
-          </div>
-        </div>
-      </div>
-    </nav>
-    
-    <section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h1 class="text-5xl font-bold text-gray-900 mb-6">
-          Streamline Your Workflow with AI
-        </h1>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Automate repetitive tasks and boost productivity with our intelligent platform
-        </p>
-        <button class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold">
-          Start Free Trial
-        </button>
-      </div>
-    </section>
-  </div>`,
-    portfolio: `<div class="min-h-screen bg-gray-900 text-white">
-    <nav class="bg-gray-900 p-6">
-      <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-light">Alex Chen Photography</h1>
-        <div class="space-x-6">
-          <a href="#" class="hover:text-gray-300">Portfolio</a>
-          <a href="#" class="hover:text-gray-300">About</a>
-          <a href="#" class="hover:text-gray-300">Contact</a>
-        </div>
-      </div>
-    </nav>
-    
-    <section class="py-20">
-      <div class="max-w-6xl mx-auto px-6 text-center">
-        <h1 class="text-6xl font-light mb-6">Capturing Moments</h1>
-        <p class="text-xl text-gray-300 mb-12">Professional photography services</p>
-        <div class="grid grid-cols-3 gap-4">
-          <div class="aspect-square bg-gray-700 rounded"></div>
-          <div class="aspect-square bg-gray-700 rounded"></div>
-          <div class="aspect-square bg-gray-700 rounded"></div>
-        </div>
-      </div>
-    </section>
-  </div>`,
+    socialApp: `// App.tsx
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Feed" component={FeedScreen} />
+        <Tab.Screen name="Upload" component={UploadScreen} />
+        <Tab.Screen name="Profile" component={ProfileScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+// FeedScreen.tsx
+import { View, FlatList, Image } from 'react-native';
+
+function FeedScreen() {
+  return (
+    <View style={styles.container}>
+      <FlatList
+        data={posts}
+        renderItem={({ item }) => (
+          <View style={styles.post}>
+            <Image source={item.image} style={styles.postImage} />
+            <Text style={styles.caption}>{item.caption}</Text>
+          </View>
+        )}
+      />
+    </View>
+  );
+}`,
+    deliveryApp: `// App.tsx
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Restaurants" component={RestaurantsList} />
+        <Stack.Screen name="Menu" component={RestaurantMenu} />
+        <Stack.Screen name="Cart" component={ShoppingCart} />
+        <Stack.Screen name="Tracking" component={OrderTracking} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+// OrderTracking.tsx
+import MapView, { Marker } from 'react-native-maps';
+
+function OrderTracking() {
+  return (
+    <View style={styles.container}>
+      <MapView style={styles.map}>
+        <Marker coordinate={driverLocation} />
+        <Marker coordinate={destinationLocation} />
+      </MapView>
+      <View style={styles.status}>
+        <Text style={styles.eta}>Estimated Delivery: 15 mins</Text>
+        <Text style={styles.driver}>John is on the way</Text>
+      </View>
+    </View>
+  );
+}`,
   };
 
   const usePrompt = (demoPrompt: string) => {

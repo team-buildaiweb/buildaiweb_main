@@ -4,92 +4,92 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Clock, Palette, Smartphone, Zap } from "lucide-react";
+import { ArrowRight, Clock, Code, Smartphone, Zap } from "lucide-react";
 
 const showcaseFeatures = [
   {
-    id: "speed",
+    id: "app-generation",
     icon: "Zap",
-    title: "Lightning Fast Generation",
+    title: "AI App Generation",
     traditional: {
-      title: "Traditional Development",
-      time: "2-4 weeks",
+      title: "Traditional App Development",
+      time: "3-6 months",
       process: [
         "Requirements gathering",
-        "Wireframing",
-        "Design mockups",
-        "Frontend coding",
-        "Testing & debugging",
-        "Deployment setup",
+        "UI/UX design",
+        "Native code development",
+        "Backend integration",
+        "Testing on devices",
+        "App store submission",
       ],
-      cost: "$5,000 - $15,000",
+      cost: "$30,000 - $150,000",
     },
     ai: {
       title: "AI-Powered BuildAIWeb",
-      time: "2-5 minutes",
+      time: "5-15 minutes",
       process: [
-        "Describe your mobile app",
-        "AI generates layout",
-        "Preview & customize",
-        "Export or deploy",
+        "Describe your app features",
+        "AI generates native code",
+        "Preview on all devices",
+        "One-click deployment",
       ],
-      cost: "$0 - $20/month",
+      cost: "From $29/month",
     },
   },
   {
-    id: "responsive",
+    id: "cross-platform",
     icon: "Smartphone",
-    title: "Automatic Responsive Design",
+    title: "Cross-Platform Apps",
     traditional: {
-      title: "Manual Responsive Coding",
-      time: "1-2 weeks",
+      title: "Manual Platform Support",
+      time: "2-3 months per platform",
       process: [
-        "Desktop design first",
-        "Mobile breakpoint planning",
-        "CSS media queries",
-        "Cross-device testing",
-        "Bug fixes",
-        "Performance optimization",
+        "Separate iOS development",
+        "Separate Android development",
+        "Platform-specific UI",
+        "Multiple codebases",
+        "Individual testing",
+        "Separate deployments",
       ],
-      cost: "30-40% of project time",
+      cost: "2x development cost",
     },
     ai: {
-      title: "AI Responsive Intelligence",
+      title: "AI Cross-Platform Magic",
+      time: "Built-in",
+      process: [
+        "Single app definition",
+        "Native performance",
+        "Unified codebase",
+        "Automatic optimization",
+      ],
+      cost: "Included in all plans",
+    },
+  },
+  {
+    id: "code-quality",
+    icon: "Code",
+    title: "Native Performance",
+    traditional: {
+      title: "Manual Code Optimization",
+      time: "2-4 weeks",
+      process: [
+        "Performance profiling",
+        "Memory optimization",
+        "Native API integration",
+        "Code refactoring",
+        "Performance testing",
+        "Platform compliance",
+      ],
+      cost: "$10,000 - $30,000",
+    },
+    ai: {
+      title: "AI Performance Engine",
       time: "Automatic",
       process: [
-        "AI analyzes content",
-        "Generates breakpoints",
-        "Optimizes for all devices",
-        "Built-in accessibility",
-      ],
-      cost: "Included automatically",
-    },
-  },
-  {
-    id: "design",
-    icon: "Palette",
-    title: "Professional Design System",
-    traditional: {
-      title: "Manual Design Process",
-      time: "1-3 weeks",
-      process: [
-        "Brand research",
-        "Color palette creation",
-        "Typography selection",
-        "Component design",
-        "Style guide creation",
-        "Design reviews",
-      ],
-      cost: "$2,000 - $8,000",
-    },
-    ai: {
-      title: "AI Design Intelligence",
-      time: "Instant",
-      process: [
-        "Industry analysis",
-        "Brand-appropriate colors",
-        "Professional typography",
-        "Consistent styling",
+        "Native code generation",
+        "Smart resource management",
+        "Platform-specific optimizations",
+        "Automated compliance",
       ],
       cost: "Built-in feature",
     },
@@ -99,7 +99,7 @@ const showcaseFeatures = [
 const iconMap = {
   Zap,
   Smartphone,
-  Palette,
+  Code,
 };
 
 export function FeatureShowcase() {
@@ -114,11 +114,11 @@ export function FeatureShowcase() {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold text-gray-900 mb-4'>
-            See the Difference AI Makes
+            Transform App Development with AI
           </h2>
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
             Compare traditional mobile app development with our AI-powered
-            approach. The results speak for themselves.
+            platform. Build native apps in minutes, not months.
           </p>
         </div>
 
@@ -158,7 +158,8 @@ export function FeatureShowcase() {
                     {showcaseFeatures[activeFeature].traditional.title}
                   </h3>
                   <Badge variant='outline' className='mt-1'>
-                    Time: {showcaseFeatures[activeFeature].traditional.time}
+                    Time:
+                    {showcaseFeatures[activeFeature].traditional.time}
                   </Badge>
                 </div>
               </div>
@@ -242,22 +243,22 @@ export function FeatureShowcase() {
             <ArrowRight className='w-8 h-8 text-purple-600' />
           </div>
           <h3 className='text-2xl font-bold text-gray-900 mb-4'>
-            Ready to Experience the AI Advantage?
+            Ready to Build Your Mobile App?
           </h3>
           <p className='text-gray-600 mb-8 max-w-2xl mx-auto'>
-            Join thousands of businesses who have already transformed their web
-            development process with AI.
+            Join innovative businesses building native mobile apps in minutes
+            with AI. No coding required.
           </p>
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <Button size='lg' className='bg-purple-600 hover:bg-purple-700'>
-              Start Building for Free
+              Create Your First App
             </Button>
             <Button
               size='lg'
               variant='outline'
               className='border-purple-600 text-purple-600 hover:bg-purple-50'
             >
-              Schedule a Demo
+              Watch Demo
             </Button>
           </div>
         </div>

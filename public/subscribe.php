@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $to = $email;
     $subject = "Newsletter Subscription Confirmation";
     $message = "Thank you for subscribing to our newsletter!";
-    $headers = "From: no-reply@buildaiweb.com";
+    $headers = "From: hello@buildaiweb.com";
 
     // Send the email
     if (mail($to, $subject, $message, $headers)) {

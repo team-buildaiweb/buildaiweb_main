@@ -84,15 +84,15 @@ Ready to experience the future of mobile app development? Try our platform today
 Mobile is becoming more accessible, more creative, and more powerful than ever before. Join us in shaping this exciting future.
     `,
     author: {
-      name: "Sarah Chen",
-      avatar: "/placeholder.svg?height=40&width=40",
-      role: "AI Research Lead",
+      name: "Nimali Jayawardena",
+      avatar: "/images/Nimali.svg",
+      role: "CEO & Co-Founder",
     },
     publishedAt: "2024-01-15",
     readTime: 8,
     category: "AI Technology",
     tags: ["AI", "Mobile App Development", "Innovation", "Future Tech"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/Blogs/1.webp",
     featured: true,
   },
   {
@@ -101,65 +101,65 @@ Mobile is becoming more accessible, more creative, and more powerful than ever b
     excerpt:
       "Explore the most effective mobile app layout patterns that our AI has learned from analyzing thousands of successful mobile apps.",
     content: `
-# 10 Mobile Layout Patterns Trained into Our AI Engine
+10 Mobile Layout Patterns Trained into Our AI Engine
 
 Our AI has analyzed over 5,000 successful mobile apps to identify the most effective layout patterns. Here are the top 10 patterns that consistently drive engagement and conversions.
 
-## 1. The Onboarding Flow
+1. The Onboarding Flow
 
 **Usage:** Apps with user accounts or personalization  
 **Key Elements:** Welcome screens, progress indicators, permission requests  
 **Why it works:** Smoothly introduces users to app features
 
-## 2. The Tabbed Navigation
+2. The Tabbed Navigation
 
 **Usage:** Social, productivity, and utility apps  
 **Key Elements:** Bottom or top tab bar, clear icons, easy switching  
 **Why it works:** Familiar navigation for quick access
 
-## 3. The Feed
+3. The Feed
 
 **Usage:** Social, news, content apps  
 **Key Elements:** Infinite scroll, cards, media previews  
 **Why it works:** Keeps users engaged with fresh content
 
-## 4. The Card Grid
+4. The Card Grid
 
 **Usage:** E-commerce, gallery, portfolio  
 **Key Elements:** Grid layout, tappable cards, quick actions  
 **Why it works:** Showcases multiple items efficiently
 
-## 5. The Profile Page
+5. The Profile Page
 
 **Usage:** Social, fitness, finance  
 **Key Elements:** Avatar, stats, settings, activity feed  
 **Why it works:** Centralizes user info and actions
 
-## 6. The Chat Interface
+6. The Chat Interface
 
 **Usage:** Messaging, support, community  
 **Key Elements:** Message bubbles, input bar, attachments  
 **Why it works:** Enables real-time communication
 
-## 7. The Dashboard
+7. The Dashboard
 
 **Usage:** Analytics, finance, productivity  
 **Key Elements:** Charts, summaries, quick links  
 **Why it works:** Gives users a snapshot of key data
 
-## 8. The List & Detail
+8. The List & Detail
 
 **Usage:** Shopping, task, booking  
 **Key Elements:** List view, detail page, add/edit actions  
 **Why it works:** Simple navigation for item-based apps
 
-## 9. The Map View
+9. The Map View
 
 **Usage:** Travel, delivery, local discovery  
 **Key Elements:** Interactive map, pins, filters  
 **Why it works:** Visualizes location-based data
 
-## 10. The Settings Panel
+10. The Settings Panel
 
 **Usage:** All apps  
 **Key Elements:** Toggles, preferences, account management  
@@ -190,15 +190,15 @@ This means every mobile app we generate benefits from the collective success of 
 Try our AI mobile app builder and watch as it intelligently selects and customizes the perfect layout pattern for your specific needs.
     `,
     author: {
-      name: "Marcus Rodriguez",
-      avatar: "/placeholder.svg?height=40&width=40",
-      role: "UX Design Director",
+      name: "Nimali Jayawardena",
+      avatar: "/images/Nimali.svg",
+      role: "CEO & Co-Founder",
     },
     publishedAt: "2024-01-12",
     readTime: 6,
     category: "Design Patterns",
     tags: ["Design", "UX", "Layouts", "Mobile", "Best Practices"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/Blogs/2.webp",
     featured: true,
   },
   {
@@ -275,15 +275,15 @@ Experience the future of design-to-development handoffs. Upload your Figma desig
 The gap between design and development is closing. Be part of the revolution.
     `,
     author: {
-      name: "Emily Watson",
-      avatar: "/placeholder.svg?height=40&width=40",
-      role: "Product Manager",
+      name: "Nadeesha Ranasinghe",
+      avatar: "/images/Nadeesha.svg",
+      role: "Data Scientist",
     },
     publishedAt: "2024-01-10",
     readTime: 7,
     category: "Design to Code",
     tags: ["Figma", "AI", "Mobile", "Workflow", "Development"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/Blogs/3.webp",
     featured: false,
   },
   {
@@ -376,15 +376,15 @@ Our AI doesn't stop at generation—it provides:
 Ready to build a mobile app that gets discovered? Our AI handles all the technical complexity while you focus on your business.
     `,
     author: {
-      name: "David Kim",
-      avatar: "/placeholder.svg?height=40&width=40",
-      role: "ASO Specialist",
+      name: "Tharindu Jayasuriya",
+      avatar: "/images/Tharindu.svg",
+      role: "Machine Learning Engineer",
     },
     publishedAt: "2024-01-08",
     readTime: 5,
     category: "ASO",
     tags: ["ASO", "Performance", "Rankings", "Mobile", "AI"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/Blogs/4.webp",
     featured: false,
   },
   {
@@ -517,15 +517,15 @@ Ready to be part of the future? Start experimenting with AI-powered development 
 The future is being built today. Be part of it.
     `,
     author: {
-      name: "Alex Thompson",
-      avatar: "/placeholder.svg?height=40&width=40",
-      role: "Technology Futurist",
+      name: "Kasun Silva",
+      avatar: "/images/Kasun.svg",
+      role: "AI Engineer",
     },
     publishedAt: "2024-01-05",
     readTime: 9,
     category: "Future Tech",
     tags: ["Future", "AI", "No-Code", "Mobile", "Industry Trends"],
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/images/Blogs/5.webp",
     featured: false,
   },
 ];

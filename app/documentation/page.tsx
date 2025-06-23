@@ -2,117 +2,141 @@
 
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Book, Search, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { docSections } from "@/lib/docs-data";
+
+// Enable static generation
+export const dynamic = "force-static";
 
 export default function DocumentationPage() {
-  const docSections = [
-    {
-      id: "getting-started",
-      title: "Getting Started",
-      description: "Everything you need to begin your journey with BuildAIWeb",
-      items: [
-        { title: "Quick Start Guide", link: "#", time: "5 min read" },
-        { title: "Installation & Setup", link: "#", time: "10 min read" },
-        { title: "Basic Concepts", link: "#", time: "15 min read" },
-        { title: "First Project", link: "#", time: "20 min read" },
-      ],
-    },
-    {
-      id: "api-reference",
-      title: "API Reference",
-      description: "Complete documentation of our API endpoints and features",
-      items: [
-        { title: "Authentication", link: "#", time: "8 min read" },
-        { title: "REST API Overview", link: "#", time: "12 min read" },
-        { title: "WebSocket API", link: "#", time: "10 min read" },
-        { title: "Rate Limits", link: "#", time: "5 min read" },
-      ],
-    },
-    {
-      id: "tutorials",
-      title: "Tutorials & Guides",
-      description: "Learn through practical examples and step-by-step guides",
-      items: [
-        {
-          title: "Building Your First AI Web App",
-          link: "#",
-          time: "30 min read",
-        },
-        { title: "Advanced AI Features", link: "#", time: "25 min read" },
-        { title: "Integration Examples", link: "#", time: "20 min read" },
-        { title: "Best Practices", link: "#", time: "15 min read" },
-      ],
-    },
-    {
-      id: "faq",
-      title: "FAQ & Troubleshooting",
-      description: "Common questions and solutions to frequent challenges",
-      items: [
-        { title: "Common Issues", link: "#", time: "10 min read" },
-        { title: "Performance Tips", link: "#", time: "8 min read" },
-        { title: "Security Guidelines", link: "#", time: "12 min read" },
-        { title: "Deployment Guide", link: "#", time: "15 min read" },
-      ],
-    },
-  ];
-
   return (
     <div className='min-h-screen bg-white flex flex-col'>
       <Navigation />
-      <main className='flex-1 pt-16 max-w-6xl mx-auto px-4'>
-        <div className='bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8'>
-          <h1 className='text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent'>
+      <main className='flex-1 max-w-7xl mx-auto px-4 py-16'>
+        {/* Header */}
+        <div className='bg-gradient-to-br from-purple-50 via-white to-blue-50 rounded-2xl p-8 mb-12 text-center'>
+          <Badge className='mb-4 inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium'>
+            <Book className='w-4 h-4 mr-2' />
             Documentation
+          </Badge>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent'>
+            Mobile App Development Guides
           </h1>
-          <p className='text-gray-600 text-lg max-w-3xl'>
-            Explore our comprehensive guides, API references, and tutorials to
-            help you build amazing AI-powered websites with BuildAIWeb.com
+          <p className='text-gray-600 mb-8 text-lg max-w-3xl mx-auto'>
+            Learn how to build amazing mobile apps with our AI-powered platform.
+            From quick starts to advanced features, we've got you covered.
           </p>
+          <div className='max-w-2xl mx-auto'>
+            <div className='relative'>
+              <Search className='absolute left-4 top-3.5 h-5 w-5 text-gray-400' />
+              <input
+                type='text'
+                placeholder='Search documentation...'
+                className='w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent'
+              />
+            </div>
+          </div>
         </div>
 
+        {/* Quick Links */}
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mb-12'>
+          {[
+            {
+              title: "Quick Start",
+              description: "Build your first app in 5 minutes",
+              link: "/documentation/quick-start",
+            },
+            {
+              title: "API Reference",
+              description: "Detailed API documentation",
+              link: "/documentation/api-reference",
+            },
+            {
+              title: "Examples",
+              description: "Real-world app examples",
+              link: "/documentation/examples",
+            },
+          ].map((item) => (
+            <Link href={item.link} key={item.title}>
+              <div className='p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow bg-white cursor-pointer'>
+                <h3 className='font-semibold text-lg mb-2'>{item.title}</h3>
+                <p className='text-gray-600 text-sm'>{item.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Documentation Sections */}
         <div className='grid md:grid-cols-2 gap-8'>
           {docSections.map((section) => (
             <div
               key={section.id}
-              className='bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow duration-200'
+              className='bg-white rounded-xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow duration-200'
             >
-              <h2 className='text-2xl font-bold mb-3 text-gray-800'>
-                {section.title}
-              </h2>
-              <p className='text-gray-600 mb-6'>{section.description}</p>
+              <div className='flex items-center mb-6'>
+                <div className='w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4'>
+                  <section.icon className='w-6 h-6 text-purple-600' />
+                </div>
+                <div>
+                  <h2 className='text-2xl font-bold text-gray-800'>
+                    {section.title}
+                  </h2>
+                  <p className='text-gray-600'>{section.description}</p>
+                </div>
+              </div>
               <div className='space-y-4'>
-                {section.items.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.link}
-                    className='flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors group'
-                  >
-                    <span className='text-gray-700 group-hover:text-blue-600'>
-                      {item.title}
-                    </span>
-                    <span className='text-sm text-gray-400 group-hover:text-blue-500'>
-                      {item.time}
-                    </span>
-                  </a>
+                {section.items.map((item) => (
+                  <Link key={item.slug} href={`/documentation/${item.slug}`}>
+                    <div className='flex items-center justify-between p-4 rounded-lg hover:bg-gray-50 transition-colors group border border-gray-100'>
+                      <div className='flex items-center space-x-3'>
+                        <item.icon className='w-5 h-5 text-gray-400 group-hover:text-purple-600' />
+                        <div>
+                          <h3 className='font-medium text-gray-900 group-hover:text-purple-600'>
+                            {item.title}
+                          </h3>
+                          <p className='text-sm text-gray-500'>
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                      <div className='flex items-center space-x-4'>
+                        <span className='text-sm text-gray-400'>
+                          {item.time}
+                        </span>
+                        <ArrowRight className='w-4 h-4 text-gray-400 group-hover:text-purple-600' />
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className='mt-12 bg-blue-50 rounded-lg p-6 text-center'>
-          <h2 className='text-xl font-semibold mb-4 text-gray-800'>
-            Need Help?
+        {/* Help Section */}
+        <div className='mt-16 bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-8 text-center'>
+          <h2 className='text-2xl font-semibold mb-4 text-gray-800'>
+            Need More Help?
           </h2>
-          <p className='text-gray-600 mb-4'>
-            Can't find what you're looking for? Our support team is here to
-            help.
+          <p className='text-gray-600 mb-6 max-w-2xl mx-auto'>
+            Can't find what you're looking for? Our support team is here to help
+            you build amazing mobile apps with AI.
           </p>
-          <a
-            href='mailto:support@buildaiweb.com'
-            className='inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors'
-          >
-            Contact Support
-          </a>
+          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            <Button size='lg' className='bg-purple-600 hover:bg-purple-700'>
+              Contact Support
+            </Button>
+            <Button
+              size='lg'
+              variant='outline'
+              className='border-purple-600 text-purple-600 hover:bg-purple-50'
+            >
+              Join Community
+            </Button>
+          </div>
         </div>
       </main>
       <Footer />

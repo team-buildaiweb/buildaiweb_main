@@ -111,14 +111,20 @@ export function BlogPostComponent({ post }: BlogPostProps) {
           className='text-gray-700 leading-relaxed'
           dangerouslySetInnerHTML={{
             __html: post.content
-              .replace(/\n/g, "<br />")
-              .replace(/#{1,6}\s/g, (match) => {
-                const level = match.trim().length;
+              // Headings: replace lines starting with #, ##, etc.
+              .replace(/^#{1,6} .+$/gm, (line) => {
+                const match = line.match(/^(#{1,6}) (.*)$/);
+                if (!match) return line;
+                const level = match[1].length;
+                const text = match[2];
                 return `<h${level} class="text-${
                   4 - level
-                }xl font-bold text-gray-900 mt-8 mb-4">`;
+                }xl font-bold text-gray-900 mt-8 mb-4">${text}</h${level}>`;
               })
-              .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
+              // Bold
+              .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+              // Line breaks
+              .replace(/\n/g, "<br />"),
           }}
         />
       </div>

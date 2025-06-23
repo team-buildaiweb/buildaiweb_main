@@ -3,47 +3,56 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp, Clock, Users, Globe, Zap, Award } from "lucide-react";
+import {
+  TrendingUp,
+  Clock,
+  Users,
+  Smartphone,
+  Zap,
+  Award,
+  Battery,
+  Cpu,
+} from "lucide-react";
 
 const metrics = [
   {
     icon: Clock,
-    label: "Average Generation Time",
-    value: "2.3",
-    unit: "seconds",
-    trend: "+15% faster than last month",
+    label: "App Generation Time",
+    value: "5",
+    unit: "minutes",
+    trend: "90% faster than traditional development",
     color: "blue",
   },
   {
     icon: Users,
-    label: "Mobile apps Generated",
-    value: "50,847",
+    label: "Apps Published",
+    value: "2,047",
     unit: "total",
-    trend: "+1,234 this week",
+    trend: "+82 this week",
     color: "green",
   },
   {
     icon: TrendingUp,
-    label: "User Satisfaction",
-    value: "98.5",
-    unit: "%",
-    trend: "+2.1% improvement",
+    label: "App Store Rating",
+    value: "4.8",
+    unit: "stars",
+    trend: "Average user rating",
     color: "purple",
   },
   {
-    icon: Globe,
-    label: "Global Availability",
-    value: "99.9",
-    unit: "% uptime",
-    trend: "24/7 worldwide",
+    icon: Battery,
+    label: "Battery Efficiency",
+    value: "95",
+    unit: "% optimized",
+    trend: "Low power impact",
     color: "orange",
   },
   {
-    icon: Zap,
-    label: "Performance Score",
-    value: "95",
+    icon: Cpu,
+    label: "Native Performance",
+    value: "99",
     unit: "/100",
-    trend: "Lighthouse average",
+    trend: "Platform benchmark score",
     color: "yellow",
   },
   {
@@ -51,35 +60,35 @@ const metrics = [
     label: "Code Quality",
     value: "A+",
     unit: "grade",
-    trend: "W3C compliant",
+    trend: "Platform standards",
     color: "red",
   },
 ];
 
 const benchmarks = [
   {
-    metric: "Page Load Speed",
+    metric: "App Launch Time",
     buildaiweb: "0.8s",
-    industry: "2.4s",
-    improvement: "67% faster",
+    industry: "2.1s",
+    improvement: "62% faster",
   },
   {
-    metric: "SEO Score",
-    buildaiweb: "95/100",
-    industry: "72/100",
-    improvement: "32% better",
+    metric: "Memory Usage",
+    buildaiweb: "45MB",
+    industry: "85MB",
+    improvement: "47% more efficient",
   },
   {
-    metric: "Mobile Performance",
-    buildaiweb: "97/100",
-    industry: "68/100",
-    improvement: "43% better",
+    metric: "Frame Rate",
+    buildaiweb: "60fps",
+    industry: "45fps",
+    improvement: "33% smoother",
   },
   {
-    metric: "Accessibility Score",
-    buildaiweb: "98/100",
-    industry: "81/100",
-    improvement: "21% better",
+    metric: "Battery Impact",
+    buildaiweb: "2%/hr",
+    industry: "5%/hr",
+    improvement: "60% more efficient",
   },
 ];
 
@@ -89,15 +98,16 @@ export function PerformanceMetrics() {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
           <Badge className='inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium mb-8'>
-            <TrendingUp className='w-4 h-4 mr-2' />
-            Performance Metrics
+            <Smartphone className='w-4 h-4 mr-2' />
+            App Performance
           </Badge>
           <h2 className='text-4xl font-bold text-gray-900 mb-4'>
-            Proven Results at Scale
+            Native Performance at AI Speed
           </h2>
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-            Our AI platform delivers consistent, measurable results. Here's how
-            we're performing across key metrics that matter to your business.
+            Our AI platform generates high-performance native mobile apps that
+            match or exceed traditionally developed applications across all key
+            metrics.
           </p>
         </div>
 
