@@ -70,12 +70,12 @@ export default function SignInPage() {
             className='inline-flex items-center gap-2 text-2xl font-bold text-purple-600'
           >
             <Image
-              src='/placeholder-logo.svg'
-              alt='Logo'
-              width={40}
-              height={40}
+              src='/logo.webp'
+              alt='BuildAIWeb Logo'
+              className='h-10 w-auto max-w-[180px]'
+              width={32}
+              height={32}
             />
-            BuildAIWeb
           </Link>
           <h1 className='mt-6 text-3xl font-bold text-gray-900'>
             Welcome back

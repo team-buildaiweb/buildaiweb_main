@@ -61,7 +61,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: Linkedin,
-    href: "https://linkedin.com/company/buildaiweb",
+    href: "https://www.linkedin.com/company/build-aii/",
     color: "hover:text-blue-600",
   },
   {
@@ -73,7 +73,7 @@ const socialLinks = [
         transform="matrix(3 0 0 3 -17 -60)"
       />
     </svg>`,
-    href: "",
+    href: "https://www.crunchbase.com/organization/buildaiweb",
     color: "hover:text-blue-500 group",
   },
   {
@@ -83,7 +83,7 @@ const socialLinks = [
       <path d="M372.4 237.9v124.9h68.5c16.6 0 31.1 14.5 31.1 31v194.7c0 16.7-14.5 31.4-31.1 31.4h-95c-16.6 0-31.1-14.3-31.1-30.6V212.3c0-16.8 14.4-32.2 30.3-32.2h95.9c16.6 0 31.1 14.5 31.1 31v72.7h-57.8v-45.8zm0 182.7v141.5h41.9V420.6h-41.9z"/>
       <path d="M647.1 283.7h-57.8v-45.8h-41.9v124.9l69.1 0.02c16.4 0 30.5 19.7 30.5 35.8v189.7c0 16.8-14.3 31.6-30.5 31.6h-92.9c-16.3 0-30.5-14.4-30.5-30.7v-106l54.3-0.1v79.1h41.9v-141.5l-65.7 0.02c-16.2 0-30.5-14.6-30.5-31.1V211.3c0-16.6 14.3-31.2 30.5-31.2h92.9c16.3 0 30.5 14.6 30.5 31.2v72.4z"/>
     </svg>`,
-    href: "",
+    href: "https://www.f6s.com/buildaiweb",
     color: "hover:text-purple-600",
   },
   {

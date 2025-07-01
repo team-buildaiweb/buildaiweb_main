@@ -82,6 +82,12 @@ export function Navigation() {
           <div className='hidden md:block'>
             <div className='ml-10 flex items-baseline space-x-4'>
               <Link
+                href='/'
+                className='text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium'
+              >
+                Home
+              </Link>
+              <Link
                 href='/features'
                 className='text-gray-600 hover:text-purple-600 px-3 py-2 text-sm font-medium'
               >
